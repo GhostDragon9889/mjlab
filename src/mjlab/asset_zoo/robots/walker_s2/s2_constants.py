@@ -10,6 +10,24 @@ from mjlab.entity import EntityArticulationInfoCfg, EntityCfg
 from mjlab.utils.actuator import ElectricActuator, reflected_inertia
 from mjlab.utils.spec_config import CollisionCfg
 
+
+
+
+"""
+地面 / terrain
+初始站立姿态 keyframe
+actuator kp/kv 或 torque scaling
+关节 damping / armature
+foot site / contact sensor
+IMU / frame sensors
+观测空间定义
+奖励函数
+终止条件
+domain randomization
+动作归一化
+"""
+
+
 ##
 # MJCF and assets.
 ##
@@ -20,7 +38,7 @@ S2_XML: Path = (
 assert S2_XML.exists()
 
 def get_spec() -> mujoco.MjSpec:
-  return mujoco.MjSpec.from_file(str(S2_XML))
+    return mujoco.MjSpec.from_file(str(S2_XML))
 
 ##
 # Actuator parameters calculs.
@@ -28,7 +46,11 @@ def get_spec() -> mujoco.MjSpec:
 
 
 
+
+
 # ---- arm joints params
+
+
 
 
 
@@ -82,14 +104,6 @@ def get_spec() -> mujoco.MjSpec:
 ##
 # Final config.
 ##
-
-
-
-
-
-
-
-
 def get_s2_robot_cfg() -> EntityCfg:
     return EntityCfg(
         mjcf_path=S2_XML,
