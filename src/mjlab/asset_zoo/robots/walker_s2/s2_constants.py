@@ -30,6 +30,8 @@ def get_spec() -> mujoco.MjSpec:
 
 # ---- arm joints params
 
+
+
 # joints inertia
 
 
@@ -41,4 +43,72 @@ def get_spec() -> mujoco.MjSpec:
 ##
 # Final config.
 ##
+
+
+
+
+
+
+##
+# Keyframes.
+##
+
+
+
+
+
+
+
+
+
+##
+# Collision config.
+##
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##
+# Final config.
+##
+
+
+
+
+
+
+
+
+def get_s2_robot_cfg() -> EntityCfg:
+    return EntityCfg(
+        mjcf_path=S2_XML,
+        articulation_info=S2_ARTICULATION,
+        initial_state=S2_INIT_STATE,
+        collision_cfg=S2_FEET_ONLY_COLLISION,
+    )
+
+
+
+
+if __name__ == "__main__":
+    import mujoco.viewer as viewer
+    from mjlab.entity.entity import Entity
+
+    robot = Entity(get_s2_robot_cfg())
+    viewer.launch(robot.spec.compile())
+
+
+
+
 
