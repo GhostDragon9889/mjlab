@@ -1,0 +1,1 @@
+"""walker_s2 robot assets"""
