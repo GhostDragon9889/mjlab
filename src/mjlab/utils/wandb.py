@@ -18,7 +18,6 @@ def add_wandb_tags(tags: Sequence[str]) -> None:
 
   try:
     import wandb
-
     if wandb.run is not None:
       existing_tags = list(wandb.run.tags) if wandb.run.tags else []
       new_tags = list(set(existing_tags + list(tags)))
