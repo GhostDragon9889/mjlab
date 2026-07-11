@@ -2181,12 +2181,12 @@
     <parent link="R_wrist_roll_link"/>
     <child link="R_sixforce_link"/>
   </joint>
-  <joint name="AssemblerFixedJoint" type="fixed">
+  <joint name="Left_hands_Joint" type="fixed">
     <origin xyz="0.00000004 0.00000001 0.00000001" rpy="0 1.57079601 -0.00000019"/>
     <parent link="L_sixforce_link"/>
     <child link="L_hand_base_link"/>
   </joint>
-  <joint name="AssemblerFixedJoint" type="fixed">
+  <joint name="Right_hands_Joint" type="fixed">
     <origin xyz="0.00000001 0.00000001 -0.00000001" rpy="0 -1.5707962 3.1415926"/>
     <parent link="R_sixforce_link"/>
     <child link="R_hand_base_link"/>
