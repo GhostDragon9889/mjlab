@@ -1,0 +1,343 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.1.3"
+    }
+    defaultPrim = "hand3_v1"
+    doc = """Generated from Composed Stage of root layer /tmp/tmp1iucmk1o/hand3_v1.usdc
+
+
+Generated from Composed Stage of root layer /tmp/urdf_import_hand3_v1_r9_c_h6u/usdex_hand3_v1/hand3_v1.usdc
+
+
+Generated from Composed Stage of root layer /tmp/urdf_import_hand3_v1_r9_c_h6u/temp_hand3_v1/hand3_v1.usd
+
+
+Generated from Composed Stage of root layer /project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/ubt_hand_v3/ubt_left_hand_v3_description/urdf/hand3_v1/hand3_v1_1/payloads/base.usd
+"""
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    subLayers = [
+        @./physics.usda@
+    ]
+    upAxis = "Z"
+)
+
+over "hand3_v1"
+{
+    over "Physics"
+    {
+        def MjcActuator "L_thumb_cmp_joint_actuator"
+        {
+            uniform double mjc:forceRange:max = 1.350000023841858
+            uniform double mjc:forceRange:min = -1.350000023841858
+            custom rel mjc:target
+            prepend rel mjc:target = </hand3_v1/Physics/L_thumb_cmp_joint>
+        }
+
+        def MjcActuator "L_thumb_mpp_joint_actuator"
+        {
+            uniform double mjc:forceRange:max = 1.350000023841858
+            uniform double mjc:forceRange:min = -1.350000023841858
+            custom rel mjc:target
+            prepend rel mjc:target = </hand3_v1/Physics/L_thumb_mpp_joint>
+        }
+
+        def MjcActuator "L_thumb_ip_joint_actuator"
+        {
+            uniform double mjc:forceRange:max = 1.350000023841858
+            uniform double mjc:forceRange:min = -1.350000023841858
+            custom rel mjc:target
+            prepend rel mjc:target = </hand3_v1/Physics/L_thumb_ip_joint>
+        }
+
+        def MjcActuator "L_index_mpp_joint_actuator"
+        {
+            uniform double mjc:forceRange:max = 1.350000023841858
+            uniform double mjc:forceRange:min = -1.350000023841858
+            custom rel mjc:target
+            prepend rel mjc:target = </hand3_v1/Physics/L_index_mpp_joint>
+        }
+
+        def MjcActuator "L_index_ip_joint_actuator"
+        {
+            uniform double mjc:forceRange:max = 1.350000023841858
+            uniform double mjc:forceRange:min = -1.350000023841858
+            custom rel mjc:target
+            prepend rel mjc:target = </hand3_v1/Physics/L_index_ip_joint>
+        }
+
+        def MjcActuator "L_middle_mpp_joint_actuator"
+        {
+            uniform double mjc:forceRange:max = 1.350000023841858
+            uniform double mjc:forceRange:min = -1.350000023841858
+            custom rel mjc:target
+            prepend rel mjc:target = </hand3_v1/Physics/L_middle_mpp_joint>
+        }
+
+        def MjcActuator "L_middle_ip_joint_actuator"
+        {
+            uniform double mjc:forceRange:max = 1.350000023841858
+            uniform double mjc:forceRange:min = -1.350000023841858
+            custom rel mjc:target
+            prepend rel mjc:target = </hand3_v1/Physics/L_middle_ip_joint>
+        }
+
+        def MjcActuator "L_ring_mpp_joint_actuator"
+        {
+            uniform double mjc:forceRange:max = 1.350000023841858
+            uniform double mjc:forceRange:min = -1.350000023841858
+            custom rel mjc:target
+            prepend rel mjc:target = </hand3_v1/Physics/L_ring_mpp_joint>
+        }
+
+        def MjcActuator "L_ring_ip_joint_actuator"
+        {
+            uniform double mjc:forceRange:max = 1.350000023841858
+            uniform double mjc:forceRange:min = -1.350000023841858
+            custom rel mjc:target
+            prepend rel mjc:target = </hand3_v1/Physics/L_ring_ip_joint>
+        }
+
+        def MjcActuator "L_little_mpp_joint_actuator"
+        {
+            uniform double mjc:forceRange:max = 1.350000023841858
+            uniform double mjc:forceRange:min = -1.350000023841858
+            custom rel mjc:target
+            prepend rel mjc:target = </hand3_v1/Physics/L_little_mpp_joint>
+        }
+
+        def MjcActuator "L_little_ip_joint_actuator"
+        {
+            uniform double mjc:forceRange:max = 1.350000023841858
+            uniform double mjc:forceRange:min = -1.350000023841858
+            custom rel mjc:target
+            prepend rel mjc:target = </hand3_v1/Physics/L_little_ip_joint>
+        }
+
+        over "L_palm_joint"
+        {
+        }
+
+        over "L_thumb_cmp_joint" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "L_thumb_mpp_joint" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "L_thumb_ip_joint" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "L_index_mpp_joint" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "L_index_ip_joint" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "L_middle_mpp_joint" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "L_middle_ip_joint" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "L_ring_mpp_joint" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "L_ring_ip_joint" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "L_little_mpp_joint" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+
+        over "L_little_ip_joint" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+        )
+        {
+        }
+    }
+
+    over "Geometry"
+    {
+        over "L_hand_base_link"
+        {
+            over "L_palm_link"
+            {
+                over "L_thumb_cmp_link"
+                {
+                    over "L_thumb_mpp_link"
+                    {
+                        over "L_thumb_ip_link"
+                        {
+                            over "L_thumb_ip_link"
+                            {
+                            }
+
+                            over "L_thumb_ip_link_1"
+                            {
+                            }
+                        }
+
+                        over "L_thumb_mpp_link"
+                        {
+                        }
+
+                        over "L_thumb_mpp_link_1"
+                        {
+                        }
+                    }
+
+                    over "L_thumb_cmp_link"
+                    {
+                    }
+
+                    over "L_thumb_cmp_link_1"
+                    {
+                    }
+                }
+
+                over "L_index_mpp_link"
+                {
+                    over "L_index_ip_link"
+                    {
+                        over "L_index_ip_link"
+                        {
+                        }
+
+                        over "L_index_ip_link_1"
+                        {
+                        }
+                    }
+
+                    over "L_index_mpp_link"
+                    {
+                    }
+
+                    over "L_index_mpp_link_1"
+                    {
+                    }
+                }
+
+                over "L_middle_mpp_link"
+                {
+                    over "L_middle_ip_link"
+                    {
+                        over "L_middle_ip_link"
+                        {
+                        }
+
+                        over "L_middle_ip_link_1"
+                        {
+                        }
+                    }
+
+                    over "L_middle_mpp_link"
+                    {
+                    }
+
+                    over "L_middle_mpp_link_1"
+                    {
+                    }
+                }
+
+                over "L_ring_mpp_link"
+                {
+                    over "L_ring_ip_link"
+                    {
+                        over "L_ring_ip_link"
+                        {
+                        }
+
+                        over "L_ring_ip_link_1"
+                        {
+                        }
+                    }
+
+                    over "L_ring_mpp_link"
+                    {
+                    }
+
+                    over "L_ring_mpp_link_1"
+                    {
+                    }
+                }
+
+                over "L_little_mpp_link"
+                {
+                    over "L_little_ip_link"
+                    {
+                        over "L_little_ip_link"
+                        {
+                        }
+
+                        over "L_little_ip_link_1"
+                        {
+                        }
+                    }
+
+                    over "L_little_mpp_link"
+                    {
+                    }
+
+                    over "L_little_mpp_link_1"
+                    {
+                    }
+                }
+
+                over "L_palm_link"
+                {
+                }
+
+                over "L_palm_link_1"
+                {
+                }
+            }
+
+            over "L_hand_base_link"
+            {
+            }
+
+            over "L_hand_base_link_1"
+            {
+            }
+        }
+    }
+
+    over "Materials"
+    {
+    }
+
+    over "VisualMaterials"
+    {
+    }
+}
+

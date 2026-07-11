@@ -1,5 +1,5 @@
 <mujoco model="walker_s2_skeleton">
-  <compiler angle="radian" meshdir="meshes/"/>
+  <compiler angle="radian" meshdir="assets/"/>
 
   <default>
     <motor ctrlrange="-1 1" ctrllimited="true"/>

@@ -1,0 +1,275 @@
+{
+    "version": "1.0",
+    "file_records": [
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/materials/Cast_Metal_Silver_Vein.mdl",
+            "source_hash": "227ab2731b4893257e9858005ab167ad8f74653e",
+            "target_url": "./SubUSDs/materials/Cast_Metal_Silver_Vein.mdl",
+            "target_hash": "d708de5b6937f196f5f4eb1a288f86ff65ec5d28"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/materials/Iron.mdl",
+            "source_hash": "d31e9a7fb4bbaaecec913b4130c43175e97f11bc",
+            "target_url": "./SubUSDs/materials/Iron.mdl",
+            "target_hash": "9c21b72d7dac9a64a5a82e8ae3872d79032b3444"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/materials/Paint_Gloss_Finish.mdl",
+            "source_hash": "14b6f4c91c061d25b7b98809c64c63e589c77543",
+            "target_url": "./SubUSDs/materials/Paint_Gloss_Finish.mdl",
+            "target_hash": "bc478adacf655c8c5ce846b7727ccf170a672440"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/materials/Paint_Matte.mdl",
+            "source_hash": "ba408bb4b1079800d1abbce2d4f2d628fdf97aa6",
+            "target_url": "./SubUSDs/materials/Paint_Matte.mdl",
+            "target_hash": "32f05557593b2f76adcc275a57696693818b8387"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/materials/Paint_Matte_Finish.mdl",
+            "source_hash": "14b6f4c91c061d25b7b98809c64c63e589c77543",
+            "target_url": "./SubUSDs/materials/Paint_Matte_Finish.mdl",
+            "target_hash": "62a61a728bd7c8dc4e4c689577ff623e449fa793"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/materials/Plastic.mdl",
+            "source_hash": "b27ee58d38faf8ce73274bddb3a37440a59ea9d2",
+            "target_url": "./SubUSDs/materials/Plastic.mdl",
+            "target_hash": "4798f5ca29da4d94684ed7e1599f70bcf985ce5f"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/materials/Silver.mdl",
+            "source_hash": "03cfb266ad5d0c743f7c4a32570bee54781cff83",
+            "target_url": "./SubUSDs/materials/Silver.mdl",
+            "target_hash": "45e08e10f2496aa053302db50da396feb28e4f2d"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/materials/Steel_Blued.mdl",
+            "source_hash": "c6a0c622669a8a8925169bdb78f9bb73868daac5",
+            "target_url": "./SubUSDs/materials/Steel_Blued.mdl",
+            "target_hash": "fbccebe0be158f02cb42c11e773fb7f08f3c1ff7"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/materials/Steel_Carbon.mdl",
+            "source_hash": "3372155b882b03b329fc0dd2e556506ec023025a",
+            "target_url": "./SubUSDs/materials/Steel_Carbon.mdl",
+            "target_hash": "48cb0457c34ac154e47c289a898a2b2346228bb5"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/materials/Tinted_Glass_R02.mdl",
+            "source_hash": "c6e7ca33f2de9661ba2f19e8a8f4a3de48e1e4e9",
+            "target_url": "./SubUSDs/materials/Tinted_Glass_R02.mdl",
+            "target_hash": "e20c0ae8e4a7e4ca56e491221323b0d68c812d21"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/textures/WireframeBlur_basecolor.png",
+            "source_hash": "96254fbd02f32b1962fca7a5fa85fe41f2891831",
+            "target_url": "./SubUSDs/textures/WireframeBlur_basecolor.png",
+            "target_hash": "761bd3cd089cc07d6fca9cd8758577ad261d3b32"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/textures/WireframeBlur_blue.png",
+            "source_hash": "6d91d217bf631d4c3172828867b80dcdf6d382dc",
+            "target_url": "./SubUSDs/textures/WireframeBlur_blue.png",
+            "target_hash": "1a7bfa0765d99eaedb32387e38183ddfc6f16b73"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/textures/Wireframe_blue.png",
+            "source_hash": "1936b098ef4c5663e93a846f6aeacd93561fd473",
+            "target_url": "./SubUSDs/textures/Wireframe_blue.png",
+            "target_hash": "937ae38e4185aa271d06467322a49e7f44475fe7"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/default_environment_1.usd",
+            "source_hash": "e353ca771e6307d239d88fbc903f12ba5ee6ec7f",
+            "target_url": "./SubUSDs/default_environment_1.usd",
+            "target_hash": "b9f84e51c59cd87ccfa7bd68e27277720100bf9c"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/textures/Cast_Metal_Silver_Vein/Cast_Metal_Silver_Vein_BaseColor.png",
+            "source_hash": "49cab55854b71cd12dbf753f9a4a419731e7f017",
+            "target_url": "./SubUSDs/textures/Cast_Metal_Silver_Vein/Cast_Metal_Silver_Vein_BaseColor.png",
+            "target_hash": "15b7b256cd77efbe59cd096a665d25ff96eb69f1"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/textures/Paint_Gloss_Finish/Paint_Gloss_Finish_BaseColor.png",
+            "source_hash": "e56dc90be0222000da3066e91846a8bc55463bd9",
+            "target_url": "./SubUSDs/textures/Paint_Gloss_Finish/Paint_Gloss_Finish_BaseColor.png",
+            "target_hash": "70ec703ad394d26c3b86fa9ca1b14bce364d4fa9"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/textures/Iron/Iron_BaseColor.png",
+            "source_hash": "6ebd9b662c8c0f61d5bf7e5954cf2db4541b9dad",
+            "target_url": "./SubUSDs/textures/Iron/Iron_BaseColor.png",
+            "target_hash": "f300adb060668d327eb6e0d81d7242f5a5cabbca"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/textures/Silver/Silver_BaseColor.png",
+            "source_hash": "a7a16cebf626321ab00910298c498c011dcebfbc",
+            "target_url": "./SubUSDs/textures/Silver/Silver_BaseColor.png",
+            "target_hash": "04a49ab8c26de786604750582af8347028c6aa51"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/textures/Paint_Matte/Paint_Matte_Finish_BaseColor.png",
+            "source_hash": "57e028609b8148a90a563b59c2f793928a2e2785",
+            "target_url": "./SubUSDs/textures/Paint_Matte/Paint_Matte_Finish_BaseColor.png",
+            "target_hash": "584f1657ce0a29dabb937c2d263576b178cf3956"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/textures/Paint_Matte_Finish/Paint_Matte_Finish_BaseColor.png",
+            "source_hash": "57e028609b8148a90a563b59c2f793928a2e2785",
+            "target_url": "./SubUSDs/textures/Paint_Matte_Finish/Paint_Matte_Finish_BaseColor.png",
+            "target_hash": "18d11b12c8cade1e252a01e534fde329c085cc2e"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/textures/Steel_Blued/Steel_Blued_BaseColor.png",
+            "source_hash": "bb85048051188ff2986dead693e91655f57b677f",
+            "target_url": "./SubUSDs/textures/Steel_Blued/Steel_Blued_BaseColor.png",
+            "target_hash": "88390f31a125e5d639fcf8e0bd9b5cdba060bb78"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/textures/Steel_Carbon/Steel_Carbon_BaseColor.png",
+            "source_hash": "87b2881681866cfe4fb0149fee7cc2931a496702",
+            "target_url": "./SubUSDs/textures/Steel_Carbon/Steel_Carbon_BaseColor.png",
+            "target_hash": "31e28cedc8f0bae987f254b961e51e66baf5b4db"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/materials/GlassWithVolume.mdl",
+            "source_hash": "e98122083cde5eb3c861747cd086072dc043daba",
+            "target_url": "./SubUSDs/materials/GlassWithVolume.mdl",
+            "target_hash": "0222e52ed948a771c5dc57c70940d329f8edde4f"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/textures/Cast_Metal_Silver_Vein/Cast_Metal_Silver_Vein_ORM.png",
+            "source_hash": "f8914cb39bb5ab8dbf60793a018c79504f915183",
+            "target_url": "./SubUSDs/textures/Cast_Metal_Silver_Vein/Cast_Metal_Silver_Vein_ORM.png",
+            "target_hash": "c55a346d3d55bebf9bbd7cf13effb3b5cb739d70"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/textures/Paint_Gloss_Finish/Paint_Gloss_Finish_ORM.png",
+            "source_hash": "6aa84e7c7583291d83d58f826ec91a46699df785",
+            "target_url": "./SubUSDs/textures/Paint_Gloss_Finish/Paint_Gloss_Finish_ORM.png",
+            "target_hash": "57d740ad809cb157bb1640db22b933ce4fbf580e"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/textures/Iron/Iron_ORM.png",
+            "source_hash": "0fbf63ab1caba9886de52f6573fec468ab9299b7",
+            "target_url": "./SubUSDs/textures/Iron/Iron_ORM.png",
+            "target_hash": "f16ae8ad729605cc8107ed858b342b0b61b65cca"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/textures/Silver/Silver_ORM.png",
+            "source_hash": "8feef9fb7909c687beff37557a61a61712d48dde",
+            "target_url": "./SubUSDs/textures/Silver/Silver_ORM.png",
+            "target_hash": "03abebf56ea898dea9a9f66461b07b30503c2619"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/textures/Paint_Matte/Paint_Matte_Finish_ORM.png",
+            "source_hash": "639ce8ac6faaa9e7e205cc1ff35c0347f6add6c4",
+            "target_url": "./SubUSDs/textures/Paint_Matte/Paint_Matte_Finish_ORM.png",
+            "target_hash": "bc755248c47b67fd680e6851dd45fac202d85532"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/textures/Paint_Matte_Finish/Paint_Matte_Finish_ORM.png",
+            "source_hash": "639ce8ac6faaa9e7e205cc1ff35c0347f6add6c4",
+            "target_url": "./SubUSDs/textures/Paint_Matte_Finish/Paint_Matte_Finish_ORM.png",
+            "target_hash": "3e4dc8c465625cdb76fbe9179dfbfc86eabf0efd"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/textures/Steel_Blued/Steel_Blued_ORM.png",
+            "source_hash": "6e0c6b4ddfedd08206a0e39d8372984e927f335a",
+            "target_url": "./SubUSDs/textures/Steel_Blued/Steel_Blued_ORM.png",
+            "target_hash": "0d3409a0d08b6b89767fc1eb0d5e66fa32fb97b6"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/textures/Steel_Carbon/Steel_Carbon_ORM.png",
+            "source_hash": "3daa35a63b23d12c2bc4470aa2d4776f2cbb229e",
+            "target_url": "./SubUSDs/textures/Steel_Carbon/Steel_Carbon_ORM.png",
+            "target_hash": "810f70bcb63e23507d61fb0da0a7d2aebadb224e"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/textures/Cast_Metal_Silver_Vein/Cast_Metal_Silver_Vein_N.png",
+            "source_hash": "a23d4a627e9e5d97471e6d1b515061504ab269c0",
+            "target_url": "./SubUSDs/textures/Cast_Metal_Silver_Vein/Cast_Metal_Silver_Vein_N.png",
+            "target_hash": "bd6467e91f440b021baa8ff4fe2b7bc326bc7012"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/textures/Paint_Gloss_Finish/Paint_Gloss_Finish_N.png",
+            "source_hash": "b64cd407e9e3e7c5673a622357a48806c88995b9",
+            "target_url": "./SubUSDs/textures/Paint_Gloss_Finish/Paint_Gloss_Finish_N.png",
+            "target_hash": "4c6c0f61e79a08d2ba2267809ce737264bad74bf"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/textures/Iron/Iron_N.png",
+            "source_hash": "14875493b005ab0cf9dbdf203c130a6c5ff3cd60",
+            "target_url": "./SubUSDs/textures/Iron/Iron_N.png",
+            "target_hash": "ec7bec58f284a6184f3917c0ab3abfc576fcfd1a"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/textures/Silver/Silver_N.png",
+            "source_hash": "834f312f636a60ac8452f598bd490697b100ba81",
+            "target_url": "./SubUSDs/textures/Silver/Silver_N.png",
+            "target_hash": "6bde9e0ad3172c3004a110e376714c1f3623268a"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/textures/Paint_Matte/Paint_Matte_Finish_N.png",
+            "source_hash": "d39a863dae2fba24d9b1f6b494431359608fbde1",
+            "target_url": "./SubUSDs/textures/Paint_Matte/Paint_Matte_Finish_N.png",
+            "target_hash": "1d37d1b4da83e08697b80edff8257a57eee98579"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/textures/Paint_Matte_Finish/Paint_Matte_Finish_N.png",
+            "source_hash": "d39a863dae2fba24d9b1f6b494431359608fbde1",
+            "target_url": "./SubUSDs/textures/Paint_Matte_Finish/Paint_Matte_Finish_N.png",
+            "target_hash": "e87f6a1b5c4b59ae1f5d7df7315b935c01553e55"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/textures/Steel_Blued/Steel_Blued_N.png",
+            "source_hash": "7a1b3e23a8211dc32801ced09d847b93d2946990",
+            "target_url": "./SubUSDs/textures/Steel_Blued/Steel_Blued_N.png",
+            "target_hash": "44d43f803182a34eb843f4f7d4f0ede7b1ac419e"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/textures/Steel_Carbon/Steel_Carbon_N.png",
+            "source_hash": "2f99c7d53f04214a48082600229d5669ef189403",
+            "target_url": "./SubUSDs/textures/Steel_Carbon/Steel_Carbon_N.png",
+            "target_hash": "de62e705292de13f7a4327d331f90222f7188b46"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/textures/WireframeBlur_basecolor_1.png",
+            "source_hash": "96254fbd02f32b1962fca7a5fa85fe41f2891831",
+            "target_url": "./SubUSDs/textures/WireframeBlur_basecolor_1.png",
+            "target_hash": "3aa6a9b29a45ab0af3364da524dc77abe6449e00"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/textures/WireframeBlur_blue_1.png",
+            "source_hash": "6d91d217bf631d4c3172828867b80dcdf6d382dc",
+            "target_url": "./SubUSDs/textures/WireframeBlur_blue_1.png",
+            "target_hash": "1a7bfa0765d99eaedb32387e38183ddfc6f16b73"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/textures/Wireframe_blue_1.png",
+            "source_hash": "1936b098ef4c5663e93a846f6aeacd93561fd473",
+            "target_url": "./SubUSDs/textures/Wireframe_blue_1.png",
+            "target_hash": "aba5adeb0d5b4c896a12fb8359d44e12979504da"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/hand3_v1_1/payloads/Physics/mujoco.usda",
+            "source_hash": "498c546d5a6fe607729fc5bbb908779342dfcc89",
+            "target_url": "./hand3_v1_1/payloads/Physics/mujoco.usda",
+            "target_hash": "22af6d13e3314a3bb006583ff32325c9104f7599"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/hand3_v1_3/payloads/Physics/mujoco.usda",
+            "source_hash": "01774d10ffab33a7caae37e26e154cf3fbdd0acb",
+            "target_url": "./hand3_v1_3/payloads/Physics/mujoco.usda",
+            "target_hash": "3b22c55cc4f8f791671851db99dde3cf36c933d7"
+        },
+        {
+            "source_url": "/project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/Collected_WalkerS2/Collected_WalkerS2/SubUSDs/materials/GlassUtils.mdl",
+            "source_hash": "2bafcf970bb42df0b02c89f866bc0cd3844054f2",
+            "target_url": "./SubUSDs/materials/GlassUtils.mdl",
+            "target_hash": "4bc02ba679563c93bdb8f27cd84915fcb85d7131"
+        }
+    ]
+}

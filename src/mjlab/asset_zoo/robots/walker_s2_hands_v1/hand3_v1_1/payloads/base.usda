@@ -1,0 +1,449 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.1.3"
+    }
+    defaultPrim = "hand3_v1"
+    doc = """Generated from Composed Stage of root layer /tmp/tmp1iucmk1o/hand3_v1.usdc
+
+
+Generated from Composed Stage of root layer /tmp/urdf_import_hand3_v1_r9_c_h6u/usdex_hand3_v1/hand3_v1.usdc
+
+
+Generated from Composed Stage of root layer /tmp/urdf_import_hand3_v1_r9_c_h6u/temp_hand3_v1/hand3_v1.usd
+
+
+Generated from Composed Stage of root layer /project/Zs-Meta/WalkerS2-Model/Walker_S2_Hands_V3/ubt_hand_v3/ubt_left_hand_v3_description/urdf/hand3_v1/hand3_v1_1/payloads/base.usd
+"""
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    subLayers = [
+        @./robot.usda@
+    ]
+    upAxis = "Z"
+)
+
+def Xform "hand3_v1" (
+    prepend apiSchemas = ["GeomModelAPI"]
+    assetInfo = {
+        string name = "hand3_v1"
+    }
+    kind = "component"
+)
+{
+    float3[] extentsHint = [(-0.12265687, -0.09564722, -5.59195e-10), (0.04143524, 0.024466949, 0.22843456), (3.4028235e38, 3.4028235e38, 3.4028235e38), (-3.4028235e38, -3.4028235e38, -3.4028235e38), (3.4028235e38, 3.4028235e38, 3.4028235e38), (-3.4028235e38, -3.4028235e38, -3.4028235e38), (-0.12265687, -0.09564722, -5.59195e-10), (0.04143524, 0.024466949, 0.22843456)]
+
+    def Scope "Materials"
+    {
+    }
+
+    def Scope "Geometry"
+    {
+        def Xform "L_hand_base_link"
+        {
+            def Xform "L_hand_base_link" (
+                instanceable = true
+                prepend references = @./instances.usda@</Instances/L_hand_base_link>
+            )
+            {
+                quatd xformOp:orient = (1, 0, 0, 0)
+                double3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (0, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+
+            def Xform "L_palm_link"
+            {
+                quatf xformOp:orient = (0.49999815, 0.5, -0.5, 0.50000185)
+                float3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (0.00035572, -0.013196, 0.099778)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                def Xform "L_palm_link" (
+                    instanceable = true
+                    prepend references = @./instances.usda@</Instances/L_palm_link>
+                )
+                {
+                    quatd xformOp:orient = (1, 0, 0, 0)
+                    double3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (0, 0, 0)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                }
+
+                def Xform "L_thumb_cmp_link"
+                {
+                    quatf xformOp:orient = (-0.6487046, 0.28139117, 0.6487067, -0.28139117)
+                    float3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (-0.048578, 0.028956, -0.0073648)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Xform "L_thumb_cmp_link" (
+                        instanceable = true
+                        prepend references = @./instances.usda@</Instances/L_thumb_cmp_link>
+                    )
+                    {
+                        quatd xformOp:orient = (1, 0, 0, 0)
+                        double3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (0, 0, 0)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                    }
+
+                    def Xform "L_thumb_mpp_link"
+                    {
+                        quatf xformOp:orient = (-0.6691366, 0.74313945, 0, 0)
+                        float3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (0.012, -0.0010557, -0.010045)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                        def Xform "L_thumb_mpp_link" (
+                            instanceable = true
+                            prepend references = @./instances.usda@</Instances/L_thumb_mpp_link>
+                        )
+                        {
+                            quatd xformOp:orient = (1, 0, 0, 0)
+                            double3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (0, 0, 0)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                        }
+
+                        def Xform "L_thumb_ip_link"
+                        {
+                            quatf xformOp:orient = (1, 0, 0, 0)
+                            float3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (0.075, -0.00001163, 0)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                            def Xform "L_thumb_ip_link" (
+                                instanceable = true
+                                prepend references = @./instances.usda@</Instances/L_thumb_ip_link>
+                            )
+                            {
+                                quatd xformOp:orient = (1, 0, 0, 0)
+                                double3 xformOp:scale = (1, 1, 1)
+                                double3 xformOp:translate = (0, 0, 0)
+                                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                            }
+
+                            def Xform "L_thumb_ip_link_1" (
+                                displayName = "L_thumb_ip_link"
+                                instanceable = true
+                                prepend references = @./instances.usda@</Instances/L_thumb_ip_link_1>
+                            )
+                            {
+                                quatd xformOp:orient = (1, 0, 0, 0)
+                                double3 xformOp:scale = (1, 1, 1)
+                                double3 xformOp:translate = (0, 0, 0)
+                                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                            }
+                        }
+
+                        def Xform "L_thumb_mpp_link_1" (
+                            displayName = "L_thumb_mpp_link"
+                            instanceable = true
+                            prepend references = @./instances.usda@</Instances/L_thumb_mpp_link_1>
+                        )
+                        {
+                            quatd xformOp:orient = (1, 0, 0, 0)
+                            double3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (0, 0, 0)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                        }
+                    }
+
+                    def Xform "L_thumb_cmp_link_1" (
+                        displayName = "L_thumb_cmp_link"
+                        instanceable = true
+                        prepend references = @./instances.usda@</Instances/L_thumb_cmp_link_1>
+                    )
+                    {
+                        quatd xformOp:orient = (1, 0, 0, 0)
+                        double3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (0, 0, 0)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                    }
+                }
+
+                def Xform "L_index_mpp_link"
+                {
+                    quatf xformOp:orient = (0.7035286, 0.7048151, -0.05689892, 0.07103306)
+                    float3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (0.041817, 0.030769, -0.011696)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Xform "L_index_mpp_link" (
+                        instanceable = true
+                        prepend references = @./instances.usda@</Instances/L_index_mpp_link>
+                    )
+                    {
+                        quatd xformOp:orient = (1, 0, 0, 0)
+                        double3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (0, 0, 0)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                    }
+
+                    def Xform "L_index_ip_link"
+                    {
+                        quatf xformOp:orient = (0.9999737, 0, 0, -0.007250559)
+                        float3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (0.0388, 0, 0)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                        def Xform "L_index_ip_link" (
+                            instanceable = true
+                            prepend references = @./instances.usda@</Instances/L_index_ip_link>
+                        )
+                        {
+                            quatd xformOp:orient = (1, 0, 0, 0)
+                            double3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (0, 0, 0)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                        }
+
+                        def Xform "L_index_ip_link_1" (
+                            displayName = "L_index_ip_link"
+                            instanceable = true
+                            prepend references = @./instances.usda@</Instances/L_index_ip_link_1>
+                        )
+                        {
+                            quatd xformOp:orient = (1, 0, 0, 0)
+                            double3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (0, 0, 0)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                        }
+                    }
+
+                    def Xform "L_index_mpp_link_1" (
+                        displayName = "L_index_mpp_link"
+                        instanceable = true
+                        prepend references = @./instances.usda@</Instances/L_index_mpp_link_1>
+                    )
+                    {
+                        quatd xformOp:orient = (1, 0, 0, 0)
+                        double3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (0, 0, 0)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                    }
+                }
+
+                def Xform "L_middle_mpp_link"
+                {
+                    quatf xformOp:orient = (0.704206, 0.7042086, -0.063969105, 0.063969344)
+                    float3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (0.042022, 0.010356, -0.011696)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Xform "L_middle_mpp_link" (
+                        instanceable = true
+                        prepend references = @./instances.usda@</Instances/L_middle_mpp_link>
+                    )
+                    {
+                        quatd xformOp:orient = (1, 0, 0, 0)
+                        double3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (0, 0, 0)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                    }
+
+                    def Xform "L_middle_ip_link"
+                    {
+                        quatf xformOp:orient = (0.9999818, 0, 0, -0.0060298014)
+                        float3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (0.0388, 0, 0)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                        def Xform "L_middle_ip_link" (
+                            instanceable = true
+                            prepend references = @./instances.usda@</Instances/L_middle_ip_link>
+                        )
+                        {
+                            quatd xformOp:orient = (1, 0, 0, 0)
+                            double3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (0, 0, 0)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                        }
+
+                        def Xform "L_middle_ip_link_1" (
+                            displayName = "L_middle_ip_link"
+                            instanceable = true
+                            prepend references = @./instances.usda@</Instances/L_middle_ip_link_1>
+                        )
+                        {
+                            quatd xformOp:orient = (1, 0, 0, 0)
+                            double3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (0, 0, 0)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                        }
+                    }
+
+                    def Xform "L_middle_mpp_link_1" (
+                        displayName = "L_middle_mpp_link"
+                        instanceable = true
+                        prepend references = @./instances.usda@</Instances/L_middle_mpp_link_1>
+                    )
+                    {
+                        quatd xformOp:orient = (1, 0, 0, 0)
+                        double3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (0, 0, 0)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                    }
+                }
+
+                def Xform "L_ring_mpp_link"
+                {
+                    quatf xformOp:orient = (0.7048125, 0.7035312, -0.07103285, 0.056899175)
+                    float3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (0.041817, -0.010057, -0.011696)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Xform "L_ring_mpp_link" (
+                        instanceable = true
+                        prepend references = @./instances.usda@</Instances/L_ring_mpp_link>
+                    )
+                    {
+                        quatd xformOp:orient = (1, 0, 0, 0)
+                        double3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (0, 0, 0)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                    }
+
+                    def Xform "L_ring_ip_link"
+                    {
+                        quatf xformOp:orient = (0.9999737, 0, 0, -0.007250559)
+                        float3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (0.0388, 0, 0)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                        def Xform "L_ring_ip_link" (
+                            instanceable = true
+                            prepend references = @./instances.usda@</Instances/L_ring_ip_link>
+                        )
+                        {
+                            quatd xformOp:orient = (1, 0, 0, 0)
+                            double3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (0, 0, 0)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                        }
+
+                        def Xform "L_ring_ip_link_1" (
+                            displayName = "L_ring_ip_link"
+                            instanceable = true
+                            prepend references = @./instances.usda@</Instances/L_ring_ip_link_1>
+                        )
+                        {
+                            quatd xformOp:orient = (1, 0, 0, 0)
+                            double3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (0, 0, 0)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                        }
+                    }
+
+                    def Xform "L_ring_mpp_link_1" (
+                        displayName = "L_ring_mpp_link"
+                        instanceable = true
+                        prepend references = @./instances.usda@</Instances/L_ring_mpp_link_1>
+                    )
+                    {
+                        quatd xformOp:orient = (1, 0, 0, 0)
+                        double3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (0, 0, 0)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                    }
+                }
+
+                def Xform "L_little_mpp_link"
+                {
+                    quatf xformOp:orient = (0.7053481, 0.70278287, -0.078089796, 0.049822934)
+                    float3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (0.041203, -0.030462, -0.011696)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                    def Xform "L_little_mpp_link" (
+                        instanceable = true
+                        prepend references = @./instances.usda@</Instances/L_little_mpp_link>
+                    )
+                    {
+                        quatd xformOp:orient = (1, 0, 0, 0)
+                        double3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (0, 0, 0)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                    }
+
+                    def Xform "L_little_ip_link"
+                    {
+                        quatf xformOp:orient = (0.9999737, 0, 0, -0.007250559)
+                        float3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (0.0388, 0, 0)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+                        def Xform "L_little_ip_link" (
+                            instanceable = true
+                            prepend references = @./instances.usda@</Instances/L_little_ip_link>
+                        )
+                        {
+                            quatd xformOp:orient = (1, 0, 0, 0)
+                            double3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (0, 0, 0)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                        }
+
+                        def Xform "L_little_ip_link_1" (
+                            displayName = "L_little_ip_link"
+                            instanceable = true
+                            prepend references = @./instances.usda@</Instances/L_little_ip_link_1>
+                        )
+                        {
+                            quatd xformOp:orient = (1, 0, 0, 0)
+                            double3 xformOp:scale = (1, 1, 1)
+                            double3 xformOp:translate = (0, 0, 0)
+                            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                        }
+                    }
+
+                    def Xform "L_little_mpp_link_1" (
+                        displayName = "L_little_mpp_link"
+                        instanceable = true
+                        prepend references = @./instances.usda@</Instances/L_little_mpp_link_1>
+                    )
+                    {
+                        quatd xformOp:orient = (1, 0, 0, 0)
+                        double3 xformOp:scale = (1, 1, 1)
+                        double3 xformOp:translate = (0, 0, 0)
+                        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                    }
+                }
+
+                def Xform "L_palm_link_1" (
+                    displayName = "L_palm_link"
+                    instanceable = true
+                    prepend references = @./instances.usda@</Instances/L_palm_link_1>
+                )
+                {
+                    quatd xformOp:orient = (1, 0, 0, 0)
+                    double3 xformOp:scale = (1, 1, 1)
+                    double3 xformOp:translate = (0, 0, 0)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                }
+            }
+
+            def Xform "L_hand_base_link_1" (
+                displayName = "L_hand_base_link"
+                instanceable = true
+                prepend references = @./instances.usda@</Instances/L_hand_base_link_1>
+            )
+            {
+                quatd xformOp:orient = (1, 0, 0, 0)
+                double3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (0, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+        }
+    }
+
+    def Scope "Physics"
+    {
+    }
+
+    def Scope "VisualMaterials"
+    {
+    }
+}
+
