@@ -534,6 +534,10 @@
     <motor name="R_little_mpp_joint_motor" joint="R_little_mpp_joint" gear="1" ctrllimited="true" ctrlrange="-1.35 1.35" />
     <motor name="R_little_ip_joint_motor" joint="R_little_ip_joint" gear="1" ctrllimited="true" ctrlrange="-1.35 1.35" />
   </actuator>
+
+
+
+  
   <sensor>
   <!-- IMU 传感器信息 加速度、⻆速度、位姿四元素 -->
   <framequat/>
