@@ -125,6 +125,7 @@
 
   <worldbody>
     <body name="base_link" pos="0 0 0">
+    <site name="body_imu" pos="0 0 0" size="0.01" />
       <freejoint name="world_joint"/>
       <inertial pos="-0.063865 -0.0001135 0.010653" mass="6.1057" quat="-0.4352257 -0.4357817 0.5582897 -0.5558646" diaginertia="0.0740697 0.0551458 0.0288325"/>
       <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="base_link_mat" type="mesh" mesh="base_link" />
@@ -215,10 +216,13 @@
             <inertial pos="0 0 0" mass="0" diaginertia="0 0 0"/>
           </body>
           <body name="head_yaw_link" pos="0.0031354 0 0.48409" quat="0.9999948 0 0.0032383 0">
+            <joint name="head_yaw_joint" type="hinge" axis="0 0 1" limited="true" range="-2.2689 2.2689" damping="0" frictionloss="0"/>
             <inertial pos="0.0002268 -0.0000387 0.0227083" mass="0.225945" quat="0.5107139 0.4899289 0.5024549 0.4966689" diaginertia="0.0000468 0.0000321 0.0000288"/>
             <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="head_yaw_link_mat" type="mesh" mesh="head_yaw_link" />
             <geom pos="0 0 0" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" name="head_yaw_collision" type="mesh" mesh="head_yaw_link" />
             <body name="head_pitch_link" pos="0 0 0.025">
+              <site name="head_imu" pos="0 0 0.025" size="0.01"/>
+              <joint name="head_pitch_joint" type="hinge" axis="0 -1 0" limited="true" range="-0.7853 0.7853" damping="0" frictionloss="0"/>
               <inertial pos="0.0493311 0.0000107 0.106461" mass="0.24972" quat="0.9998365 0.0009409 0.0180595 0.0000238" diaginertia="0.0013512 0.000918 0.0007371"/>
               <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="head_pitch_link_mat" type="mesh" mesh="head_pitch_link" />
               <geom pos="0 0 0" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" name="head_pitch_collision" type="mesh" mesh="head_pitch_link" />
@@ -535,11 +539,26 @@
     <motor name="R_little_ip_joint_motor" joint="R_little_ip_joint" gear="1" ctrllimited="true" ctrlrange="-1.35 1.35" />
   </actuator>
 
+<sensor>
+  <!-- IMU 传感器信息 加速度、⻆速度、 -->
+  <!-- 位姿四元素 
+  This element creates a sensor that returns the unit quaternion specifying the orientation of the spatial frame of the object, in global coordinates. -->
+  <framequat  name="orientation_base" site="body_imu"/>
+  <!-- ⻆速度  
+  This element creates a 3-axis gyroscope. The sensor is mounted at a site, and has the same position and orientation as the site frame. 
+  This sensor outputs three numbers, which are the angular velocity of the site in local coordinates. 
+  This sensor is often used in conjunction with an accelerometer mounted at the same site, to simulate an inertial measurement unit (IMU).-->
+  <gyro  name="angular_velocity_base" site="body_imu"/>
+  <!-- 加速度
+  This element creates a 3-axis accelerometer. 
+  The sensor is mounted at a site, and has the same position and orientation as the site frame. 
+  This sensor outputs three numbers, which are the linear acceleration of the site (including gravity) in local coordinates.
+   -->
+  <accelerometer  name="linear_acceleration_base" site="body_imu"/>
 
-
+  <framequat  name="orientation_head" site="head_imu"/>
+  <gyro  name="angular_velocity_head" site="head_imu"/>
+  <accelerometer  name="linear_acceleration_head" site="head_imu"/>
+  </sensor>
   
-  <sensor>
-  <!-- IMU 传感器信息 加速度、⻆速度、位姿四元素 -->
-  <framequat/>
- 
 </mujoco>
