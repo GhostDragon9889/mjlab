@@ -217,13 +217,13 @@
             <inertial pos="0 0 0" mass="1" diaginertia="0 0 0"/>
           </body>
           <body name="head_yaw_link" pos="0.0031354 0 0.48409" quat="0.9999948 0 0.0032383 0">
-            <joint name="head_yaw_joint" type="hinge" axis="0 0 1" limited="true" range="-2.2689 2.2689" damping="3.0" frictionloss="0"/>
+            <joint name="head_yaw_joint" type="hinge" axis="0 0 1" limited="true" range="-2.2689 2.2689" damping="10.0" frictionloss="0"/>
             <inertial pos="0.0002268 -0.0000387 0.0227083" mass="0.58109743" quat="0.5107139 0.4899289 0.5024549 0.4966689" diaginertia="0.0000468 0.0000321 0.0000288"/>
             <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="head_yaw_link_mat" type="mesh" mesh="head_yaw_link" />
             <geom pos="0 0 0" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" name="head_yaw_collision" type="mesh" mesh="head_yaw_link" />
             <body name="head_pitch_link" pos="0 0 0.025">
               <site name="head_imu" pos="0 0 0.025" size="0.01"/>
-              <joint name="head_pitch_joint" type="hinge" axis="0 -1 0" limited="true" range="-0.7853 0.7853" damping="3.0" frictionloss="0"/>
+              <joint name="head_pitch_joint" type="hinge" axis="0 -1 0" limited="true" range="-0.7853 0.7853" damping="10.0" frictionloss="0"/>
               <inertial pos="0.0493311 0.0000107 0.106461" mass="1.06900742" quat="0.9998365 0.0009409 0.0180595 0.0000238" diaginertia="0.0013512 0.000918 0.0007371"/>
               <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="head_pitch_link_mat" type="mesh" mesh="head_pitch_link" />
               <geom pos="0 0 0" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" name="head_pitch_collision" type="mesh" mesh="head_pitch_link" />
@@ -265,16 +265,16 @@
                         <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="L_wrist_roll_link_mat" type="mesh" mesh="L_wrist_roll_link" />
                         <geom pos="0 0 0" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" name="L_wrist_roll_collision" type="mesh" mesh="L_wrist_roll_link" />
                         <body name="L_wrist_roll_link_geom_1" pos="0 0 0">
-                          <inertial pos="0 0 0" mass="0" diaginertia="0.1 0.1 0.1"/>
+                          <inertial pos="0 0 0" mass="0.2" fullinertia="0.0002736 0.0002155 0.0001102 0 0 -0.0000077"/>
                           <geom pos="-0.0044948 -0.0019462 -0.0843794" quat="0.9999937 -0.0024445 0.0025736 0.0000063" group="1" contype="0" conaffinity="0" material="L_wrist_roll_link_geom_1_mat" type="mesh" mesh="L_sixforce_link" />
                           <geom pos="-0.0044948 -0.0019462 -0.0843794" quat="0.9999937 -0.0024445 0.0025736 0.0000063" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" name="L_sixforce_collision" type="mesh" mesh="L_sixforce_link" />
                         </body>
                         <body name="L_wrist_roll_link_geom_2" pos="0 0 0">
-                          <inertial pos="0 0 0" mass="0" diaginertia="0.1 0.1 0.1"/>
+                          <inertial pos="0 0 0" mass="0.2" fullinertia="0.0002736 0.0002155 0.0001102 0 0 -0.0000077"/>
                           <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="L_wrist_roll_link_geom_2_mat" type="mesh" mesh="L_hand_base_link" />
                         </body>
                         <body name="L_hand_base_link" pos="0 0 -0.085" quat="0.0000014 0 1 0">
-                          <inertial pos="0 0 0" mass="0.28014837" diaginertia="0.1 0.1 0.1"/>
+                          <inertial pos="0 0 0" mass="0.28014837" fullinertia="0.0000172 0.0000368 0.0000401 0.0000003 -0.0000004 -0.0000002"/>
                           <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="L_hand_base_link_mat" type="mesh" mesh="L_hand_base_link" />
                           <geom pos="0 0 0" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" name="L_hand_base_link_geom_0" type="mesh" mesh="L_hand_base_link" />
                           <body name="L_palm_link" pos="0 0 0">
@@ -392,17 +392,17 @@
                         <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="R_wrist_roll_link_mat" type="mesh" mesh="R_wrist_roll_link" />
                         <geom pos="0 0 0" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" name="R_wrist_roll_collision" type="mesh" mesh="R_wrist_roll_link" />
                         <body name="R_wrist_roll_link_geom_1" pos="0 0 0">
-                          <inertial pos="0 0 0" mass="0" diaginertia="0.1 0.1 0.1"/>
+                          <inertial pos="0 0 0" mass="0.2" fullinertia="0.0002736 0.0002155 0.0001102 0 0 0.0000077"/>
                           <geom pos="0.0022054 -0.0019134 -0.0818061" quat="0.999997 -0.0024367 0 0" group="1" contype="0" conaffinity="0" material="R_wrist_roll_link_geom_1_mat" type="mesh" mesh="R_sixforce_link" />
                           <geom pos="0.0022054 -0.0019134 -0.0818061" quat="0.999997 -0.0024367 0 0" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" name="R_sixforce_collision" type="mesh" mesh="R_sixforce_link" />
                         </body>
                         <body name="R_wrist_roll_link_geom_2" pos="0 0 0">
-                          <inertial pos="0 0 0" mass="0" diaginertia="0.1 0.1 0.1"/>
+                          <inertial pos="0 0 0" mass="0.2" fullinertia="0.0002736 0.0002155 0.0001102 0 0 0.0000077"/>
                           <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="R_wrist_roll_link_geom_2_mat" type="mesh" mesh="R_hand_base_link" />
                         </body>
                         <body name="R_hand_base_link" pos="0 0 -0.085" quat="0 0.9999997 0.0007963 0.0000014">
                         <!-- add diaginertia -->
-                          <inertial pos="0 0 0" mass="0.28014837" diaginertia="0.1 0.1 0.1"/>
+                          <inertial pos="0 0 0" mass="0.28014837" fullinertia="0.0000172 0.0000368 0.0000401 -0.0000003 -0.0000004 0.0000002"/>
                           <geom pos="0 0 0" group="1" contype="0" conaffinity="0" material="R_hand_base_link_mat" type="mesh" mesh="R_hand_base_link" />
                           <geom pos="0 0 0" rgba="0.9373 0.2667 0.2667 1" group="3" contype="1" conaffinity="1" name="R_hand_base_link_geom_0" type="mesh" mesh="R_hand_base_link" />
                           <body name="R_palm_link" pos="0 0 0">
