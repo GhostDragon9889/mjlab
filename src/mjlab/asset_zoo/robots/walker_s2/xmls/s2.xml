@@ -1,5 +1,6 @@
 <mujoco model="walker_s2">
-  <compiler angle="radian" meshdir="assets/" />
+  <compiler angle="radian" meshdir="assets/" autolimits="true" />
+  
   <asset>
     <mesh name="base_link" file="base_link.STL" />
     <mesh name="L_hip_roll_link" file="L_hip_roll_link.STL" />
@@ -543,7 +544,7 @@
   <!-- IMU 传感器信息 加速度、⻆速度、 -->
   <!-- 位姿四元素 
   This element creates a sensor that returns the unit quaternion specifying the orientation of the spatial frame of the object, in global coordinates. -->
-  <framequat  name="orientation_base" site="body_imu"/>
+  <framequat  name="orientation_base" objtype="site" objname="body_imu"/>
   <!-- ⻆速度  
   This element creates a 3-axis gyroscope. The sensor is mounted at a site, and has the same position and orientation as the site frame. 
   This sensor outputs three numbers, which are the angular velocity of the site in local coordinates. 
@@ -556,7 +557,7 @@
    -->
   <accelerometer  name="linear_acceleration_base" site="body_imu"/>
 
-  <framequat  name="orientation_head" site="head_imu"/>
+  <framequat  name="orientation_head" objtype="site" objname="head_imu"/>
   <gyro  name="angular_velocity_head" site="head_imu"/>
   <accelerometer  name="linear_acceleration_head" site="head_imu"/>
   </sensor>
