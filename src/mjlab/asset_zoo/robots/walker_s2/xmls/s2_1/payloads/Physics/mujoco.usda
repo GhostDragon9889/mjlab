@@ -1,0 +1,1636 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "MuJoCo USD Converter v0.2.0"
+    }
+    defaultPrim = "walker_s2"
+    doc = """Generated from Composed Stage of root layer /tmp/tmpy3cl1dc5/walker_s2.usdc
+
+
+Generated from Composed Stage of root layer /tmp/mjcf_import_s2_wjbg1q78/usdex_s2/walker_s2.usdc
+
+
+Generated from Composed Stage of root layer /tmp/mjcf_import_s2_wjbg1q78/temp_s2/s2.usd
+
+
+Generated from Composed Stage of root layer /project/Zs-Meta/mjlab/src/mjlab/asset_zoo/robots/walker_s2/xmls/s2_1/payloads/base.usd
+"""
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    subLayers = [
+        @./physics.usda@
+    ]
+    upAxis = "Z"
+)
+
+over "walker_s2"
+{
+    over "Geometry"
+    {
+        over "base_link"
+        {
+            over "body_imu" (
+                prepend apiSchemas = ["MjcSiteAPI"]
+            )
+            {
+            }
+
+            over "L_hip_roll_link"
+            {
+                over "L_hip_yaw_link"
+                {
+                    over "L_hip_pitch_link"
+                    {
+                        over "L_knee_pitch_link"
+                        {
+                            over "L_ankle_pitch_link"
+                            {
+                                over "L_ankle_roll_link"
+                                {
+                                    over "L_ankle_roll_joint" (
+                                        delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                        prepend apiSchemas = ["MjcJointAPI"]
+                                    )
+                                    {
+                                        uniform double mjc:damping = 3
+                                    }
+
+                                    over "L_ankle_roll_link"
+                                    {
+                                    }
+
+                                    over "L_ankle_roll_collision"
+                                    {
+                                    }
+                                }
+
+                                over "L_ankle_pitch_joint" (
+                                    delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                    prepend apiSchemas = ["MjcJointAPI"]
+                                )
+                                {
+                                    uniform double mjc:damping = 3
+                                }
+
+                                over "L_ankle_pitch_link"
+                                {
+                                }
+
+                                over "L_ankle_pitch_collision"
+                                {
+                                }
+                            }
+
+                            over "L_knee_pitch_joint" (
+                                delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                prepend apiSchemas = ["MjcJointAPI"]
+                            )
+                            {
+                                uniform double mjc:damping = 3
+                            }
+
+                            over "L_knee_pitch_link"
+                            {
+                            }
+
+                            over "L_knee_pitch_collision"
+                            {
+                            }
+                        }
+
+                        over "L_hip_pitch_joint" (
+                            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                            prepend apiSchemas = ["MjcJointAPI"]
+                        )
+                        {
+                            uniform double mjc:damping = 3
+                        }
+
+                        over "L_hip_pitch_link"
+                        {
+                        }
+
+                        over "L_hip_pitch_collision"
+                        {
+                        }
+                    }
+
+                    over "L_hip_yaw_joint" (
+                        delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                        prepend apiSchemas = ["MjcJointAPI"]
+                    )
+                    {
+                        uniform double mjc:damping = 3
+                    }
+
+                    over "L_hip_yaw_link"
+                    {
+                    }
+
+                    over "L_hip_yaw_collision"
+                    {
+                    }
+                }
+
+                over "L_hip_roll_joint" (
+                    delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                    prepend apiSchemas = ["MjcJointAPI"]
+                )
+                {
+                    uniform double mjc:damping = 3
+                }
+
+                over "L_hip_roll_link"
+                {
+                }
+
+                over "L_hip_roll_collision"
+                {
+                }
+            }
+
+            over "R_hip_roll_link"
+            {
+                over "R_hip_yaw_link"
+                {
+                    over "R_hip_pitch_link"
+                    {
+                        over "R_knee_pitch_link"
+                        {
+                            over "R_ankle_pitch_link"
+                            {
+                                over "R_ankle_roll_link"
+                                {
+                                    over "R_ankle_roll_joint" (
+                                        delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                        prepend apiSchemas = ["MjcJointAPI"]
+                                    )
+                                    {
+                                        uniform double mjc:damping = 3
+                                    }
+
+                                    over "R_ankle_roll_link"
+                                    {
+                                    }
+
+                                    over "R_ankle_roll_collision"
+                                    {
+                                    }
+                                }
+
+                                over "R_ankle_pitch_joint" (
+                                    delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                    prepend apiSchemas = ["MjcJointAPI"]
+                                )
+                                {
+                                    uniform double mjc:damping = 3
+                                }
+
+                                over "R_ankle_pitch_link"
+                                {
+                                }
+
+                                over "R_ankle_pitch_collision"
+                                {
+                                }
+                            }
+
+                            over "R_knee_pitch_joint" (
+                                delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                prepend apiSchemas = ["MjcJointAPI"]
+                            )
+                            {
+                                uniform double mjc:damping = 3
+                            }
+
+                            over "R_knee_pitch_link"
+                            {
+                            }
+
+                            over "R_knee_pitch_collision"
+                            {
+                            }
+                        }
+
+                        over "R_hip_pitch_joint" (
+                            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                            prepend apiSchemas = ["MjcJointAPI"]
+                        )
+                        {
+                            uniform double mjc:damping = 3
+                        }
+
+                        over "R_hip_pitch_link"
+                        {
+                        }
+
+                        over "R_hip_pitch_collision"
+                        {
+                        }
+                    }
+
+                    over "R_hip_yaw_joint" (
+                        delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                        prepend apiSchemas = ["MjcJointAPI"]
+                    )
+                    {
+                        uniform double mjc:damping = 3
+                    }
+
+                    over "R_hip_yaw_link"
+                    {
+                    }
+
+                    over "R_hip_yaw_collision"
+                    {
+                    }
+                }
+
+                over "R_hip_roll_joint" (
+                    delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                    prepend apiSchemas = ["MjcJointAPI"]
+                )
+                {
+                    uniform double mjc:damping = 3
+                }
+
+                over "R_hip_roll_link"
+                {
+                }
+
+                over "R_hip_roll_collision"
+                {
+                }
+            }
+
+            over "waist_yaw_link"
+            {
+                over "waist_pitch_link"
+                {
+                    over "head_yaw_link"
+                    {
+                        over "head_pitch_link"
+                        {
+                            over "head_imu" (
+                                prepend apiSchemas = ["MjcSiteAPI"]
+                            )
+                            {
+                            }
+
+                            over "head_pitch_joint" (
+                                delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                prepend apiSchemas = ["MjcJointAPI"]
+                            )
+                            {
+                                uniform double mjc:damping = 3
+                            }
+
+                            over "head_pitch_link"
+                            {
+                            }
+
+                            over "head_pitch_collision"
+                            {
+                            }
+                        }
+
+                        over "head_yaw_joint" (
+                            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                            prepend apiSchemas = ["MjcJointAPI"]
+                        )
+                        {
+                            uniform double mjc:damping = 3
+                        }
+
+                        over "head_yaw_link"
+                        {
+                        }
+
+                        over "head_yaw_collision"
+                        {
+                        }
+                    }
+
+                    over "L_shoulder_pitch_link"
+                    {
+                        over "L_shoulder_roll_link"
+                        {
+                            over "L_shoulder_yaw_link"
+                            {
+                                over "L_elbow_roll_link"
+                                {
+                                    over "L_elbow_yaw_link"
+                                    {
+                                        over "L_wrist_pitch_link"
+                                        {
+                                            over "L_wrist_roll_link"
+                                            {
+                                                over "L_hand_base_link"
+                                                {
+                                                    over "L_palm_link"
+                                                    {
+                                                        over "L_thumb_cmp_link"
+                                                        {
+                                                            over "L_thumb_mpp_link"
+                                                            {
+                                                                over "L_thumb_ip_link"
+                                                                {
+                                                                    over "L_thumb_ip_joint" (
+                                                                        delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                                                        prepend apiSchemas = ["MjcJointAPI"]
+                                                                    )
+                                                                    {
+                                                                        uniform double mjc:damping = 3
+                                                                    }
+
+                                                                    over "L_thumb_ip_link"
+                                                                    {
+                                                                    }
+
+                                                                    over "L_thumb_ip_link_geom_1"
+                                                                    {
+                                                                    }
+                                                                }
+
+                                                                over "L_thumb_mpp_joint" (
+                                                                    delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                                                    prepend apiSchemas = ["MjcJointAPI"]
+                                                                )
+                                                                {
+                                                                    uniform double mjc:damping = 3
+                                                                }
+
+                                                                over "L_thumb_mpp_link"
+                                                                {
+                                                                }
+
+                                                                over "L_thumb_mpp_link_geom_1"
+                                                                {
+                                                                }
+                                                            }
+
+                                                            over "L_thumb_cmp_joint" (
+                                                                delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                                                prepend apiSchemas = ["MjcJointAPI"]
+                                                            )
+                                                            {
+                                                                uniform double mjc:damping = 3
+                                                            }
+
+                                                            over "L_thumb_cmp_link"
+                                                            {
+                                                            }
+
+                                                            over "L_thumb_cmp_link_geom_1"
+                                                            {
+                                                            }
+                                                        }
+
+                                                        over "L_index_mpp_link"
+                                                        {
+                                                            over "L_index_ip_link"
+                                                            {
+                                                                over "L_index_ip_joint" (
+                                                                    delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                                                    prepend apiSchemas = ["MjcJointAPI"]
+                                                                )
+                                                                {
+                                                                    uniform double mjc:damping = 3
+                                                                }
+
+                                                                over "L_index_ip_link"
+                                                                {
+                                                                }
+
+                                                                over "L_index_ip_link_geom_1"
+                                                                {
+                                                                }
+                                                            }
+
+                                                            over "L_index_mpp_joint" (
+                                                                delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                                                prepend apiSchemas = ["MjcJointAPI"]
+                                                            )
+                                                            {
+                                                                uniform double mjc:damping = 3
+                                                            }
+
+                                                            over "L_index_mpp_link"
+                                                            {
+                                                            }
+
+                                                            over "L_index_mpp_link_geom_1"
+                                                            {
+                                                            }
+                                                        }
+
+                                                        over "L_middle_mpp_link"
+                                                        {
+                                                            over "L_middle_ip_link"
+                                                            {
+                                                                over "L_middle_ip_joint" (
+                                                                    delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                                                    prepend apiSchemas = ["MjcJointAPI"]
+                                                                )
+                                                                {
+                                                                    uniform double mjc:damping = 3
+                                                                }
+
+                                                                over "L_middle_ip_link"
+                                                                {
+                                                                }
+
+                                                                over "L_middle_ip_link_geom_1"
+                                                                {
+                                                                }
+                                                            }
+
+                                                            over "L_middle_mpp_joint" (
+                                                                delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                                                prepend apiSchemas = ["MjcJointAPI"]
+                                                            )
+                                                            {
+                                                                uniform double mjc:damping = 3
+                                                            }
+
+                                                            over "L_middle_mpp_link"
+                                                            {
+                                                            }
+
+                                                            over "L_middle_mpp_link_geom_1"
+                                                            {
+                                                            }
+                                                        }
+
+                                                        over "L_ring_mpp_link"
+                                                        {
+                                                            over "L_ring_ip_link"
+                                                            {
+                                                                over "L_ring_ip_joint" (
+                                                                    delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                                                    prepend apiSchemas = ["MjcJointAPI"]
+                                                                )
+                                                                {
+                                                                    uniform double mjc:damping = 3
+                                                                }
+
+                                                                over "L_ring_ip_link"
+                                                                {
+                                                                }
+
+                                                                over "L_ring_ip_link_geom_1"
+                                                                {
+                                                                }
+                                                            }
+
+                                                            over "L_ring_mpp_joint" (
+                                                                delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                                                prepend apiSchemas = ["MjcJointAPI"]
+                                                            )
+                                                            {
+                                                                uniform double mjc:damping = 3
+                                                            }
+
+                                                            over "L_ring_mpp_link"
+                                                            {
+                                                            }
+
+                                                            over "L_ring_mpp_link_geom_1"
+                                                            {
+                                                            }
+                                                        }
+
+                                                        over "L_little_mpp_link"
+                                                        {
+                                                            over "L_little_ip_link"
+                                                            {
+                                                                over "L_little_ip_joint" (
+                                                                    delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                                                    prepend apiSchemas = ["MjcJointAPI"]
+                                                                )
+                                                                {
+                                                                    uniform double mjc:damping = 3
+                                                                }
+
+                                                                over "L_little_ip_link"
+                                                                {
+                                                                }
+
+                                                                over "L_little_ip_link_geom_1"
+                                                                {
+                                                                }
+                                                            }
+
+                                                            over "L_little_mpp_joint" (
+                                                                delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                                                prepend apiSchemas = ["MjcJointAPI"]
+                                                            )
+                                                            {
+                                                                uniform double mjc:damping = 3
+                                                            }
+
+                                                            over "L_little_mpp_link"
+                                                            {
+                                                            }
+
+                                                            over "L_little_mpp_link_geom_1"
+                                                            {
+                                                            }
+                                                        }
+
+                                                        over "PhysicsFixedJoint"
+                                                        {
+                                                        }
+
+                                                        over "L_palm_link"
+                                                        {
+                                                        }
+
+                                                        over "L_palm_link_geom_1"
+                                                        {
+                                                        }
+                                                    }
+
+                                                    over "PhysicsFixedJoint"
+                                                    {
+                                                    }
+
+                                                    over "L_hand_base_link"
+                                                    {
+                                                    }
+
+                                                    over "L_hand_base_link_geom_0"
+                                                    {
+                                                    }
+                                                }
+
+                                                over "L_wrist_roll_joint" (
+                                                    delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                                    prepend apiSchemas = ["MjcJointAPI"]
+                                                )
+                                                {
+                                                    uniform double mjc:damping = 3
+                                                }
+
+                                                over "L_wrist_roll_link_geom_1"
+                                                {
+                                                    over "PhysicsFixedJoint"
+                                                    {
+                                                    }
+
+                                                    over "L_sixforce_link"
+                                                    {
+                                                    }
+
+                                                    over "L_sixforce_collision"
+                                                    {
+                                                    }
+                                                }
+
+                                                over "L_wrist_roll_link_geom_2"
+                                                {
+                                                    over "PhysicsFixedJoint"
+                                                    {
+                                                    }
+
+                                                    over "L_hand_base_link"
+                                                    {
+                                                    }
+                                                }
+
+                                                over "L_wrist_roll_link"
+                                                {
+                                                }
+
+                                                over "L_wrist_roll_collision"
+                                                {
+                                                }
+                                            }
+
+                                            over "L_wrist_pitch_joint" (
+                                                delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                                prepend apiSchemas = ["MjcJointAPI"]
+                                            )
+                                            {
+                                                uniform double mjc:damping = 3
+                                            }
+
+                                            over "L_wrist_pitch_link"
+                                            {
+                                            }
+
+                                            over "L_wrist_pitch_collision"
+                                            {
+                                            }
+                                        }
+
+                                        over "L_elbow_yaw_joint" (
+                                            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                            prepend apiSchemas = ["MjcJointAPI"]
+                                        )
+                                        {
+                                            uniform double mjc:damping = 3
+                                        }
+
+                                        over "L_elbow_yaw_link"
+                                        {
+                                        }
+
+                                        over "L_elbow_yaw_collision"
+                                        {
+                                        }
+                                    }
+
+                                    over "L_elbow_roll_joint" (
+                                        delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                        prepend apiSchemas = ["MjcJointAPI"]
+                                    )
+                                    {
+                                        uniform double mjc:damping = 3
+                                    }
+
+                                    over "L_elbow_roll_link"
+                                    {
+                                    }
+
+                                    over "L_elbow_roll_collision"
+                                    {
+                                    }
+                                }
+
+                                over "L_shoulder_yaw_joint" (
+                                    delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                    prepend apiSchemas = ["MjcJointAPI"]
+                                )
+                                {
+                                    uniform double mjc:damping = 3
+                                }
+
+                                over "L_shoulder_yaw_link"
+                                {
+                                }
+
+                                over "L_shoulder_yaw_collision"
+                                {
+                                }
+                            }
+
+                            over "L_shoulder_roll_joint" (
+                                delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                prepend apiSchemas = ["MjcJointAPI"]
+                            )
+                            {
+                                uniform double mjc:damping = 3
+                            }
+
+                            over "L_shoulder_roll_link"
+                            {
+                            }
+
+                            over "L_shoulder_roll_collision"
+                            {
+                            }
+                        }
+
+                        over "L_shoulder_pitch_joint" (
+                            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                            prepend apiSchemas = ["MjcJointAPI"]
+                        )
+                        {
+                            uniform double mjc:damping = 3
+                        }
+
+                        over "L_shoulder_pitch_link"
+                        {
+                        }
+
+                        over "L_shoulder_pitch_collision"
+                        {
+                        }
+                    }
+
+                    over "R_shoulder_pitch_link"
+                    {
+                        over "R_shoulder_roll_link"
+                        {
+                            over "R_shoulder_yaw_link"
+                            {
+                                over "R_elbow_roll_link"
+                                {
+                                    over "R_elbow_yaw_link"
+                                    {
+                                        over "R_wrist_pitch_link"
+                                        {
+                                            over "R_wrist_roll_link"
+                                            {
+                                                over "R_hand_base_link"
+                                                {
+                                                    over "R_palm_link"
+                                                    {
+                                                        over "R_thumb_cmp_link"
+                                                        {
+                                                            over "R_thumb_mpp_link"
+                                                            {
+                                                                over "R_thumb_ip_link"
+                                                                {
+                                                                    over "R_thumb_ip_joint" (
+                                                                        delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                                                        prepend apiSchemas = ["MjcJointAPI"]
+                                                                    )
+                                                                    {
+                                                                        uniform double mjc:damping = 3
+                                                                    }
+
+                                                                    over "R_thumb_ip_link"
+                                                                    {
+                                                                    }
+
+                                                                    over "R_thumb_ip_link_geom_1"
+                                                                    {
+                                                                    }
+                                                                }
+
+                                                                over "R_thumb_mpp_joint" (
+                                                                    delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                                                    prepend apiSchemas = ["MjcJointAPI"]
+                                                                )
+                                                                {
+                                                                    uniform double mjc:damping = 3
+                                                                }
+
+                                                                over "R_thumb_mpp_link"
+                                                                {
+                                                                }
+
+                                                                over "R_thumb_mpp_link_geom_1"
+                                                                {
+                                                                }
+                                                            }
+
+                                                            over "R_thumb_cmp_joint" (
+                                                                delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                                                prepend apiSchemas = ["MjcJointAPI"]
+                                                            )
+                                                            {
+                                                                uniform double mjc:damping = 3
+                                                            }
+
+                                                            over "R_thumb_cmp_link"
+                                                            {
+                                                            }
+
+                                                            over "R_thumb_cmp_link_geom_1"
+                                                            {
+                                                            }
+                                                        }
+
+                                                        over "R_index_mpp_link"
+                                                        {
+                                                            over "R_index_ip_link"
+                                                            {
+                                                                over "R_index_ip_joint" (
+                                                                    delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                                                    prepend apiSchemas = ["MjcJointAPI"]
+                                                                )
+                                                                {
+                                                                    uniform double mjc:damping = 3
+                                                                }
+
+                                                                over "R_index_ip_link"
+                                                                {
+                                                                }
+
+                                                                over "R_index_ip_link_geom_1"
+                                                                {
+                                                                }
+                                                            }
+
+                                                            over "R_index_mpp_joint" (
+                                                                delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                                                prepend apiSchemas = ["MjcJointAPI"]
+                                                            )
+                                                            {
+                                                                uniform double mjc:damping = 3
+                                                            }
+
+                                                            over "R_index_mpp_link"
+                                                            {
+                                                            }
+
+                                                            over "R_index_mpp_link_geom_1"
+                                                            {
+                                                            }
+                                                        }
+
+                                                        over "R_middle_mpp_link"
+                                                        {
+                                                            over "R_middle_ip_link"
+                                                            {
+                                                                over "R_middle_ip_joint" (
+                                                                    delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                                                    prepend apiSchemas = ["MjcJointAPI"]
+                                                                )
+                                                                {
+                                                                    uniform double mjc:damping = 3
+                                                                }
+
+                                                                over "R_middle_ip_link"
+                                                                {
+                                                                }
+
+                                                                over "R_middle_ip_link_geom_1"
+                                                                {
+                                                                }
+                                                            }
+
+                                                            over "R_middle_mpp_joint" (
+                                                                delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                                                prepend apiSchemas = ["MjcJointAPI"]
+                                                            )
+                                                            {
+                                                                uniform double mjc:damping = 3
+                                                            }
+
+                                                            over "R_middle_mpp_link"
+                                                            {
+                                                            }
+
+                                                            over "R_middle_mpp_link_geom_1"
+                                                            {
+                                                            }
+                                                        }
+
+                                                        over "R_ring_mpp_link"
+                                                        {
+                                                            over "R_ring_ip_link"
+                                                            {
+                                                                over "R_ring_ip_joint" (
+                                                                    delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                                                    prepend apiSchemas = ["MjcJointAPI"]
+                                                                )
+                                                                {
+                                                                    uniform double mjc:damping = 3
+                                                                }
+
+                                                                over "R_ring_ip_link"
+                                                                {
+                                                                }
+
+                                                                over "R_ring_ip_link_geom_1"
+                                                                {
+                                                                }
+                                                            }
+
+                                                            over "R_ring_mpp_joint" (
+                                                                delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                                                prepend apiSchemas = ["MjcJointAPI"]
+                                                            )
+                                                            {
+                                                                uniform double mjc:damping = 3
+                                                            }
+
+                                                            over "R_ring_mpp_link"
+                                                            {
+                                                            }
+
+                                                            over "R_ring_mpp_link_geom_1"
+                                                            {
+                                                            }
+                                                        }
+
+                                                        over "R_little_mpp_link"
+                                                        {
+                                                            over "R_little_ip_link"
+                                                            {
+                                                                over "R_little_ip_joint" (
+                                                                    delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                                                    prepend apiSchemas = ["MjcJointAPI"]
+                                                                )
+                                                                {
+                                                                    uniform double mjc:damping = 3
+                                                                }
+
+                                                                over "R_little_ip_link"
+                                                                {
+                                                                }
+
+                                                                over "R_little_ip_link_geom_1"
+                                                                {
+                                                                }
+                                                            }
+
+                                                            over "R_little_mpp_joint" (
+                                                                delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                                                prepend apiSchemas = ["MjcJointAPI"]
+                                                            )
+                                                            {
+                                                                uniform double mjc:damping = 3
+                                                            }
+
+                                                            over "R_little_mpp_link"
+                                                            {
+                                                            }
+
+                                                            over "R_little_mpp_link_geom_1"
+                                                            {
+                                                            }
+                                                        }
+
+                                                        over "PhysicsFixedJoint"
+                                                        {
+                                                        }
+
+                                                        over "R_palm_link"
+                                                        {
+                                                        }
+
+                                                        over "R_palm_link_geom_1"
+                                                        {
+                                                        }
+                                                    }
+
+                                                    over "PhysicsFixedJoint"
+                                                    {
+                                                    }
+
+                                                    over "R_hand_base_link"
+                                                    {
+                                                    }
+
+                                                    over "R_hand_base_link_geom_0"
+                                                    {
+                                                    }
+                                                }
+
+                                                over "R_wrist_roll_joint" (
+                                                    delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                                    prepend apiSchemas = ["MjcJointAPI"]
+                                                )
+                                                {
+                                                    uniform double mjc:damping = 3
+                                                }
+
+                                                over "R_wrist_roll_link_geom_1"
+                                                {
+                                                    over "PhysicsFixedJoint"
+                                                    {
+                                                    }
+
+                                                    over "R_sixforce_link"
+                                                    {
+                                                    }
+
+                                                    over "R_sixforce_collision"
+                                                    {
+                                                    }
+                                                }
+
+                                                over "R_wrist_roll_link_geom_2"
+                                                {
+                                                    over "PhysicsFixedJoint"
+                                                    {
+                                                    }
+
+                                                    over "R_hand_base_link"
+                                                    {
+                                                    }
+                                                }
+
+                                                over "R_wrist_roll_link"
+                                                {
+                                                }
+
+                                                over "R_wrist_roll_collision"
+                                                {
+                                                }
+                                            }
+
+                                            over "R_wrist_pitch_joint" (
+                                                delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                                prepend apiSchemas = ["MjcJointAPI"]
+                                            )
+                                            {
+                                                uniform double mjc:damping = 3
+                                            }
+
+                                            over "R_wrist_pitch_link"
+                                            {
+                                            }
+
+                                            over "R_wrist_pitch_collision"
+                                            {
+                                            }
+                                        }
+
+                                        over "R_elbow_yaw_joint" (
+                                            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                            prepend apiSchemas = ["MjcJointAPI"]
+                                        )
+                                        {
+                                            uniform double mjc:damping = 3
+                                        }
+
+                                        over "R_elbow_yaw_link"
+                                        {
+                                        }
+
+                                        over "R_elbow_yaw_collision"
+                                        {
+                                        }
+                                    }
+
+                                    over "R_elbow_roll_joint" (
+                                        delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                        prepend apiSchemas = ["MjcJointAPI"]
+                                    )
+                                    {
+                                        uniform double mjc:damping = 3
+                                    }
+
+                                    over "R_elbow_roll_link"
+                                    {
+                                    }
+
+                                    over "R_elbow_roll_collision"
+                                    {
+                                    }
+                                }
+
+                                over "R_shoulder_yaw_joint" (
+                                    delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                    prepend apiSchemas = ["MjcJointAPI"]
+                                )
+                                {
+                                    uniform double mjc:damping = 3
+                                }
+
+                                over "R_shoulder_yaw_link"
+                                {
+                                }
+
+                                over "R_shoulder_yaw_collision"
+                                {
+                                }
+                            }
+
+                            over "R_shoulder_roll_joint" (
+                                delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                                prepend apiSchemas = ["MjcJointAPI"]
+                            )
+                            {
+                                uniform double mjc:damping = 3
+                            }
+
+                            over "R_shoulder_roll_link"
+                            {
+                            }
+
+                            over "R_shoulder_roll_collision"
+                            {
+                            }
+                        }
+
+                        over "R_shoulder_pitch_joint" (
+                            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                            prepend apiSchemas = ["MjcJointAPI"]
+                        )
+                        {
+                            uniform double mjc:damping = 3
+                        }
+
+                        over "R_shoulder_pitch_link"
+                        {
+                        }
+
+                        over "R_shoulder_pitch_collision"
+                        {
+                        }
+                    }
+
+                    over "waist_pitch_joint" (
+                        delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                        prepend apiSchemas = ["MjcJointAPI"]
+                    )
+                    {
+                        uniform double mjc:damping = 3
+                    }
+
+                    over "torso_link"
+                    {
+                        over "PhysicsFixedJoint"
+                        {
+                        }
+                    }
+
+                    over "waist_pitch_link"
+                    {
+                    }
+
+                    over "waist_pitch_collision"
+                    {
+                    }
+                }
+
+                over "waist_yaw_joint" (
+                    delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+                    prepend apiSchemas = ["MjcJointAPI"]
+                )
+                {
+                    uniform double mjc:damping = 3
+                }
+
+                over "waist_yaw_link"
+                {
+                }
+
+                over "waist_yaw_collision"
+                {
+                }
+            }
+
+            over "base_link"
+            {
+            }
+
+            over "base_link_collision"
+            {
+            }
+        }
+    }
+
+    over "Physics"
+    {
+        over "PhysicsMaterial" (
+            prepend apiSchemas = ["MjcMaterialAPI"]
+        )
+        {
+        }
+
+        def MjcActuator "L_hip_roll_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 220
+            uniform double mjc:ctrlRange:min = -220
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/L_hip_roll_link/L_hip_roll_joint>
+        }
+
+        def MjcActuator "L_hip_yaw_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 60
+            uniform double mjc:ctrlRange:min = -60
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/L_hip_roll_link/L_hip_yaw_link/L_hip_yaw_joint>
+        }
+
+        def MjcActuator "L_hip_pitch_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 200
+            uniform double mjc:ctrlRange:min = -200
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/L_hip_roll_link/L_hip_yaw_link/L_hip_pitch_link/L_hip_pitch_joint>
+        }
+
+        def MjcActuator "L_knee_pitch_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 250
+            uniform double mjc:ctrlRange:min = -250
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/L_hip_roll_link/L_hip_yaw_link/L_hip_pitch_link/L_knee_pitch_link/L_knee_pitch_joint>
+        }
+
+        def MjcActuator "L_ankle_pitch_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 60
+            uniform double mjc:ctrlRange:min = -60
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/L_hip_roll_link/L_hip_yaw_link/L_hip_pitch_link/L_knee_pitch_link/L_ankle_pitch_link/L_ankle_pitch_joint>
+        }
+
+        def MjcActuator "L_ankle_roll_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 60
+            uniform double mjc:ctrlRange:min = -60
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/L_hip_roll_link/L_hip_yaw_link/L_hip_pitch_link/L_knee_pitch_link/L_ankle_pitch_link/L_ankle_roll_link/L_ankle_roll_joint>
+        }
+
+        def MjcActuator "R_hip_roll_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 220
+            uniform double mjc:ctrlRange:min = -220
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/R_hip_roll_link/R_hip_roll_joint>
+        }
+
+        def MjcActuator "R_hip_yaw_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 60
+            uniform double mjc:ctrlRange:min = -60
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/R_hip_roll_link/R_hip_yaw_link/R_hip_yaw_joint>
+        }
+
+        def MjcActuator "R_hip_pitch_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 200
+            uniform double mjc:ctrlRange:min = -200
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/R_hip_roll_link/R_hip_yaw_link/R_hip_pitch_link/R_hip_pitch_joint>
+        }
+
+        def MjcActuator "R_knee_pitch_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 250
+            uniform double mjc:ctrlRange:min = -250
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/R_hip_roll_link/R_hip_yaw_link/R_hip_pitch_link/R_knee_pitch_link/R_knee_pitch_joint>
+        }
+
+        def MjcActuator "R_ankle_pitch_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 60
+            uniform double mjc:ctrlRange:min = -60
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/R_hip_roll_link/R_hip_yaw_link/R_hip_pitch_link/R_knee_pitch_link/R_ankle_pitch_link/R_ankle_pitch_joint>
+        }
+
+        def MjcActuator "R_ankle_roll_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 60
+            uniform double mjc:ctrlRange:min = -60
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/R_hip_roll_link/R_hip_yaw_link/R_hip_pitch_link/R_knee_pitch_link/R_ankle_pitch_link/R_ankle_roll_link/R_ankle_roll_joint>
+        }
+
+        def MjcActuator "waist_yaw_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 250
+            uniform double mjc:ctrlRange:min = -250
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_yaw_joint>
+        }
+
+        def MjcActuator "waist_pitch_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 250
+            uniform double mjc:ctrlRange:min = -250
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/waist_pitch_joint>
+        }
+
+        def MjcActuator "L_shoulder_pitch_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 80
+            uniform double mjc:ctrlRange:min = -80
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/L_shoulder_pitch_link/L_shoulder_pitch_joint>
+        }
+
+        def MjcActuator "L_shoulder_roll_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 80
+            uniform double mjc:ctrlRange:min = -80
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/L_shoulder_pitch_link/L_shoulder_roll_link/L_shoulder_roll_joint>
+        }
+
+        def MjcActuator "L_shoulder_yaw_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 45
+            uniform double mjc:ctrlRange:min = -45
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/L_shoulder_pitch_link/L_shoulder_roll_link/L_shoulder_yaw_link/L_shoulder_yaw_joint>
+        }
+
+        def MjcActuator "L_elbow_roll_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 45
+            uniform double mjc:ctrlRange:min = -45
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/L_shoulder_pitch_link/L_shoulder_roll_link/L_shoulder_yaw_link/L_elbow_roll_link/L_elbow_roll_joint>
+        }
+
+        def MjcActuator "L_elbow_yaw_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 20
+            uniform double mjc:ctrlRange:min = -20
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/L_shoulder_pitch_link/L_shoulder_roll_link/L_shoulder_yaw_link/L_elbow_roll_link/L_elbow_yaw_link/L_elbow_yaw_joint>
+        }
+
+        def MjcActuator "L_wrist_pitch_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 20
+            uniform double mjc:ctrlRange:min = -20
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/L_shoulder_pitch_link/L_shoulder_roll_link/L_shoulder_yaw_link/L_elbow_roll_link/L_elbow_yaw_link/L_wrist_pitch_link/L_wrist_pitch_joint>
+        }
+
+        def MjcActuator "L_wrist_roll_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 20
+            uniform double mjc:ctrlRange:min = -20
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/L_shoulder_pitch_link/L_shoulder_roll_link/L_shoulder_yaw_link/L_elbow_roll_link/L_elbow_yaw_link/L_wrist_pitch_link/L_wrist_roll_link/L_wrist_roll_joint>
+        }
+
+        def MjcActuator "L_thumb_cmp_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 1.35
+            uniform double mjc:ctrlRange:min = -1.35
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/L_shoulder_pitch_link/L_shoulder_roll_link/L_shoulder_yaw_link/L_elbow_roll_link/L_elbow_yaw_link/L_wrist_pitch_link/L_wrist_roll_link/L_hand_base_link/L_palm_link/L_thumb_cmp_link/L_thumb_cmp_joint>
+        }
+
+        def MjcActuator "L_thumb_mpp_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 1.35
+            uniform double mjc:ctrlRange:min = -1.35
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/L_shoulder_pitch_link/L_shoulder_roll_link/L_shoulder_yaw_link/L_elbow_roll_link/L_elbow_yaw_link/L_wrist_pitch_link/L_wrist_roll_link/L_hand_base_link/L_palm_link/L_thumb_cmp_link/L_thumb_mpp_link/L_thumb_mpp_joint>
+        }
+
+        def MjcActuator "L_thumb_ip_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 1.35
+            uniform double mjc:ctrlRange:min = -1.35
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/L_shoulder_pitch_link/L_shoulder_roll_link/L_shoulder_yaw_link/L_elbow_roll_link/L_elbow_yaw_link/L_wrist_pitch_link/L_wrist_roll_link/L_hand_base_link/L_palm_link/L_thumb_cmp_link/L_thumb_mpp_link/L_thumb_ip_link/L_thumb_ip_joint>
+        }
+
+        def MjcActuator "L_index_mpp_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 1.35
+            uniform double mjc:ctrlRange:min = -1.35
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/L_shoulder_pitch_link/L_shoulder_roll_link/L_shoulder_yaw_link/L_elbow_roll_link/L_elbow_yaw_link/L_wrist_pitch_link/L_wrist_roll_link/L_hand_base_link/L_palm_link/L_index_mpp_link/L_index_mpp_joint>
+        }
+
+        def MjcActuator "L_index_ip_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 1.35
+            uniform double mjc:ctrlRange:min = -1.35
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/L_shoulder_pitch_link/L_shoulder_roll_link/L_shoulder_yaw_link/L_elbow_roll_link/L_elbow_yaw_link/L_wrist_pitch_link/L_wrist_roll_link/L_hand_base_link/L_palm_link/L_index_mpp_link/L_index_ip_link/L_index_ip_joint>
+        }
+
+        def MjcActuator "L_middle_mpp_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 1.35
+            uniform double mjc:ctrlRange:min = -1.35
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/L_shoulder_pitch_link/L_shoulder_roll_link/L_shoulder_yaw_link/L_elbow_roll_link/L_elbow_yaw_link/L_wrist_pitch_link/L_wrist_roll_link/L_hand_base_link/L_palm_link/L_middle_mpp_link/L_middle_mpp_joint>
+        }
+
+        def MjcActuator "L_middle_ip_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 1.35
+            uniform double mjc:ctrlRange:min = -1.35
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/L_shoulder_pitch_link/L_shoulder_roll_link/L_shoulder_yaw_link/L_elbow_roll_link/L_elbow_yaw_link/L_wrist_pitch_link/L_wrist_roll_link/L_hand_base_link/L_palm_link/L_middle_mpp_link/L_middle_ip_link/L_middle_ip_joint>
+        }
+
+        def MjcActuator "L_ring_mpp_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 1.35
+            uniform double mjc:ctrlRange:min = -1.35
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/L_shoulder_pitch_link/L_shoulder_roll_link/L_shoulder_yaw_link/L_elbow_roll_link/L_elbow_yaw_link/L_wrist_pitch_link/L_wrist_roll_link/L_hand_base_link/L_palm_link/L_ring_mpp_link/L_ring_mpp_joint>
+        }
+
+        def MjcActuator "L_ring_ip_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 1.35
+            uniform double mjc:ctrlRange:min = -1.35
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/L_shoulder_pitch_link/L_shoulder_roll_link/L_shoulder_yaw_link/L_elbow_roll_link/L_elbow_yaw_link/L_wrist_pitch_link/L_wrist_roll_link/L_hand_base_link/L_palm_link/L_ring_mpp_link/L_ring_ip_link/L_ring_ip_joint>
+        }
+
+        def MjcActuator "L_little_mpp_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 1.35
+            uniform double mjc:ctrlRange:min = -1.35
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/L_shoulder_pitch_link/L_shoulder_roll_link/L_shoulder_yaw_link/L_elbow_roll_link/L_elbow_yaw_link/L_wrist_pitch_link/L_wrist_roll_link/L_hand_base_link/L_palm_link/L_little_mpp_link/L_little_mpp_joint>
+        }
+
+        def MjcActuator "L_little_ip_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 1.35
+            uniform double mjc:ctrlRange:min = -1.35
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/L_shoulder_pitch_link/L_shoulder_roll_link/L_shoulder_yaw_link/L_elbow_roll_link/L_elbow_yaw_link/L_wrist_pitch_link/L_wrist_roll_link/L_hand_base_link/L_palm_link/L_little_mpp_link/L_little_ip_link/L_little_ip_joint>
+        }
+
+        def MjcActuator "R_shoulder_pitch_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 80
+            uniform double mjc:ctrlRange:min = -80
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/R_shoulder_pitch_link/R_shoulder_pitch_joint>
+        }
+
+        def MjcActuator "R_shoulder_roll_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 80
+            uniform double mjc:ctrlRange:min = -80
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/R_shoulder_pitch_link/R_shoulder_roll_link/R_shoulder_roll_joint>
+        }
+
+        def MjcActuator "R_shoulder_yaw_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 45
+            uniform double mjc:ctrlRange:min = -45
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/R_shoulder_pitch_link/R_shoulder_roll_link/R_shoulder_yaw_link/R_shoulder_yaw_joint>
+        }
+
+        def MjcActuator "R_elbow_roll_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 45
+            uniform double mjc:ctrlRange:min = -45
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/R_shoulder_pitch_link/R_shoulder_roll_link/R_shoulder_yaw_link/R_elbow_roll_link/R_elbow_roll_joint>
+        }
+
+        def MjcActuator "R_elbow_yaw_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 20
+            uniform double mjc:ctrlRange:min = -20
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/R_shoulder_pitch_link/R_shoulder_roll_link/R_shoulder_yaw_link/R_elbow_roll_link/R_elbow_yaw_link/R_elbow_yaw_joint>
+        }
+
+        def MjcActuator "R_wrist_pitch_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 20
+            uniform double mjc:ctrlRange:min = -20
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/R_shoulder_pitch_link/R_shoulder_roll_link/R_shoulder_yaw_link/R_elbow_roll_link/R_elbow_yaw_link/R_wrist_pitch_link/R_wrist_pitch_joint>
+        }
+
+        def MjcActuator "R_wrist_roll_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 20
+            uniform double mjc:ctrlRange:min = -20
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/R_shoulder_pitch_link/R_shoulder_roll_link/R_shoulder_yaw_link/R_elbow_roll_link/R_elbow_yaw_link/R_wrist_pitch_link/R_wrist_roll_link/R_wrist_roll_joint>
+        }
+
+        def MjcActuator "R_thumb_cmp_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 1.35
+            uniform double mjc:ctrlRange:min = -1.35
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/R_shoulder_pitch_link/R_shoulder_roll_link/R_shoulder_yaw_link/R_elbow_roll_link/R_elbow_yaw_link/R_wrist_pitch_link/R_wrist_roll_link/R_hand_base_link/R_palm_link/R_thumb_cmp_link/R_thumb_cmp_joint>
+        }
+
+        def MjcActuator "R_thumb_mpp_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 1.35
+            uniform double mjc:ctrlRange:min = -1.35
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/R_shoulder_pitch_link/R_shoulder_roll_link/R_shoulder_yaw_link/R_elbow_roll_link/R_elbow_yaw_link/R_wrist_pitch_link/R_wrist_roll_link/R_hand_base_link/R_palm_link/R_thumb_cmp_link/R_thumb_mpp_link/R_thumb_mpp_joint>
+        }
+
+        def MjcActuator "R_thumb_ip_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 1.35
+            uniform double mjc:ctrlRange:min = -1.35
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/R_shoulder_pitch_link/R_shoulder_roll_link/R_shoulder_yaw_link/R_elbow_roll_link/R_elbow_yaw_link/R_wrist_pitch_link/R_wrist_roll_link/R_hand_base_link/R_palm_link/R_thumb_cmp_link/R_thumb_mpp_link/R_thumb_ip_link/R_thumb_ip_joint>
+        }
+
+        def MjcActuator "R_index_mpp_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 1.35
+            uniform double mjc:ctrlRange:min = -1.35
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/R_shoulder_pitch_link/R_shoulder_roll_link/R_shoulder_yaw_link/R_elbow_roll_link/R_elbow_yaw_link/R_wrist_pitch_link/R_wrist_roll_link/R_hand_base_link/R_palm_link/R_index_mpp_link/R_index_mpp_joint>
+        }
+
+        def MjcActuator "R_index_ip_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 1.35
+            uniform double mjc:ctrlRange:min = -1.35
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/R_shoulder_pitch_link/R_shoulder_roll_link/R_shoulder_yaw_link/R_elbow_roll_link/R_elbow_yaw_link/R_wrist_pitch_link/R_wrist_roll_link/R_hand_base_link/R_palm_link/R_index_mpp_link/R_index_ip_link/R_index_ip_joint>
+        }
+
+        def MjcActuator "R_middle_mpp_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 1.35
+            uniform double mjc:ctrlRange:min = -1.35
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/R_shoulder_pitch_link/R_shoulder_roll_link/R_shoulder_yaw_link/R_elbow_roll_link/R_elbow_yaw_link/R_wrist_pitch_link/R_wrist_roll_link/R_hand_base_link/R_palm_link/R_middle_mpp_link/R_middle_mpp_joint>
+        }
+
+        def MjcActuator "R_middle_ip_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 1.35
+            uniform double mjc:ctrlRange:min = -1.35
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/R_shoulder_pitch_link/R_shoulder_roll_link/R_shoulder_yaw_link/R_elbow_roll_link/R_elbow_yaw_link/R_wrist_pitch_link/R_wrist_roll_link/R_hand_base_link/R_palm_link/R_middle_mpp_link/R_middle_ip_link/R_middle_ip_joint>
+        }
+
+        def MjcActuator "R_ring_mpp_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 1.35
+            uniform double mjc:ctrlRange:min = -1.35
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/R_shoulder_pitch_link/R_shoulder_roll_link/R_shoulder_yaw_link/R_elbow_roll_link/R_elbow_yaw_link/R_wrist_pitch_link/R_wrist_roll_link/R_hand_base_link/R_palm_link/R_ring_mpp_link/R_ring_mpp_joint>
+        }
+
+        def MjcActuator "R_ring_ip_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 1.35
+            uniform double mjc:ctrlRange:min = -1.35
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/R_shoulder_pitch_link/R_shoulder_roll_link/R_shoulder_yaw_link/R_elbow_roll_link/R_elbow_yaw_link/R_wrist_pitch_link/R_wrist_roll_link/R_hand_base_link/R_palm_link/R_ring_mpp_link/R_ring_ip_link/R_ring_ip_joint>
+        }
+
+        def MjcActuator "R_little_mpp_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 1.35
+            uniform double mjc:ctrlRange:min = -1.35
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/R_shoulder_pitch_link/R_shoulder_roll_link/R_shoulder_yaw_link/R_elbow_roll_link/R_elbow_yaw_link/R_wrist_pitch_link/R_wrist_roll_link/R_hand_base_link/R_palm_link/R_little_mpp_link/R_little_mpp_joint>
+        }
+
+        def MjcActuator "R_little_ip_joint_motor"
+        {
+            uniform token mjc:ctrlLimited = "true"
+            uniform double mjc:ctrlRange:max = 1.35
+            uniform double mjc:ctrlRange:min = -1.35
+            custom rel mjc:target
+            prepend rel mjc:target = </walker_s2/Geometry/base_link/waist_yaw_link/waist_pitch_link/R_shoulder_pitch_link/R_shoulder_roll_link/R_shoulder_yaw_link/R_elbow_roll_link/R_elbow_yaw_link/R_wrist_pitch_link/R_wrist_roll_link/R_hand_base_link/R_palm_link/R_little_mpp_link/R_little_ip_link/R_little_ip_joint>
+        }
+    }
+
+    over "Materials"
+    {
+    }
+
+    over "VisualMaterials"
+    {
+    }
+}
+
+over "PhysicsScene" (
+    prepend apiSchemas = ["MjcSceneAPI"]
+)
+{
+    uniform token mjc:compiler:angle = "radian"
+    uniform bool mjc:flag:multiccd = 0
+}
+
