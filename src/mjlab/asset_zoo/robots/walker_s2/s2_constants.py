@@ -10,9 +10,6 @@ from mjlab.entity import EntityArticulationInfoCfg, EntityCfg
 from mjlab.utils.actuator import ElectricActuator, reflected_inertia
 from mjlab.utils.spec_config import CollisionCfg
 
-
-
-
 """
 地面 / terrain
 初始站立姿态 keyframe
