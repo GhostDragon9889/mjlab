@@ -526,56 +526,58 @@
     </body>
   </worldbody>
   <actuator>
-    <motor name="L_hip_roll_joint_motor" joint="L_hip_roll_joint" gear="1" ctrllimited="true" ctrlrange="-220 220"/>
-    <motor name="L_hip_yaw_joint_motor" joint="L_hip_yaw_joint" gear="1" ctrllimited="true" ctrlrange="-60 60"/>
-    <motor name="L_hip_pitch_joint_motor" joint="L_hip_pitch_joint" gear="1" ctrllimited="true" ctrlrange="-200 200"/>
-    <motor name="L_knee_pitch_joint_motor" joint="L_knee_pitch_joint" gear="1" ctrllimited="true" ctrlrange="-250 250"/>
-    <motor name="L_ankle_pitch_joint_motor" joint="L_ankle_pitch_joint" gear="1" ctrllimited="true" ctrlrange="-60 60"/>
-    <motor name="L_ankle_roll_joint_motor" joint="L_ankle_roll_joint" gear="1" ctrllimited="true" ctrlrange="-60 60"/>
-    <motor name="R_hip_roll_joint_motor" joint="R_hip_roll_joint" gear="1" ctrllimited="true" ctrlrange="-220 220"/>
-    <motor name="R_hip_yaw_joint_motor" joint="R_hip_yaw_joint" gear="1" ctrllimited="true" ctrlrange="-60 60"/>
-    <motor name="R_hip_pitch_joint_motor" joint="R_hip_pitch_joint" gear="1" ctrllimited="true" ctrlrange="-200 200"/>
-    <motor name="R_knee_pitch_joint_motor" joint="R_knee_pitch_joint" gear="1" ctrllimited="true" ctrlrange="-250 250"/>
-    <motor name="R_ankle_pitch_joint_motor" joint="R_ankle_pitch_joint" gear="1" ctrllimited="true" ctrlrange="-60 60"/>
-    <motor name="R_ankle_roll_joint_motor" joint="R_ankle_roll_joint" gear="1" ctrllimited="true" ctrlrange="-60 60"/>
-    <motor name="waist_yaw_joint_motor" joint="waist_yaw_joint" gear="1" ctrllimited="true" ctrlrange="-250 250"/>
-    <motor name="waist_pitch_joint_motor" joint="waist_pitch_joint" gear="1" ctrllimited="true" ctrlrange="-250 250"/>
-    <motor name="L_shoulder_pitch_joint_motor" joint="L_shoulder_pitch_joint" gear="1" ctrllimited="true" ctrlrange="-80 80"/>
-    <motor name="L_shoulder_roll_joint_motor" joint="L_shoulder_roll_joint" gear="1" ctrllimited="true" ctrlrange="-80 80"/>
-    <motor name="L_shoulder_yaw_joint_motor" joint="L_shoulder_yaw_joint" gear="1" ctrllimited="true" ctrlrange="-45 45"/>
-    <motor name="L_elbow_roll_joint_motor" joint="L_elbow_roll_joint" gear="1" ctrllimited="true" ctrlrange="-45 45"/>
-    <motor name="L_elbow_yaw_joint_motor" joint="L_elbow_yaw_joint" gear="1" ctrllimited="true" ctrlrange="-20 20"/>
-    <motor name="L_wrist_pitch_joint_motor" joint="L_wrist_pitch_joint" gear="1" ctrllimited="true" ctrlrange="-20 20"/>
-    <motor name="L_wrist_roll_joint_motor" joint="L_wrist_roll_joint" gear="1" ctrllimited="true" ctrlrange="-20 20"/>
-    <motor name="L_thumb_cmp_joint_motor" joint="L_thumb_cmp_joint" gear="1" ctrllimited="true" ctrlrange="-1.35 1.35"/>
-    <motor name="L_thumb_mpp_joint_motor" joint="L_thumb_mpp_joint" gear="1" ctrllimited="true" ctrlrange="-1.35 1.35"/>
-    <motor name="L_thumb_ip_joint_motor" joint="L_thumb_ip_joint" gear="1" ctrllimited="true" ctrlrange="-1.35 1.35"/>
-    <motor name="L_index_mpp_joint_motor" joint="L_index_mpp_joint" gear="1" ctrllimited="true" ctrlrange="-1.35 1.35"/>
-    <motor name="L_index_ip_joint_motor" joint="L_index_ip_joint" gear="1" ctrllimited="true" ctrlrange="-1.35 1.35"/>
-    <motor name="L_middle_mpp_joint_motor" joint="L_middle_mpp_joint" gear="1" ctrllimited="true" ctrlrange="-1.35 1.35"/>
-    <motor name="L_middle_ip_joint_motor" joint="L_middle_ip_joint" gear="1" ctrllimited="true" ctrlrange="-1.35 1.35"/>
-    <motor name="L_ring_mpp_joint_motor" joint="L_ring_mpp_joint" gear="1" ctrllimited="true" ctrlrange="-1.35 1.35"/>
-    <motor name="L_ring_ip_joint_motor" joint="L_ring_ip_joint" gear="1" ctrllimited="true" ctrlrange="-1.35 1.35"/>
-    <motor name="L_little_mpp_joint_motor" joint="L_little_mpp_joint" gear="1" ctrllimited="true" ctrlrange="-1.35 1.35"/>
-    <motor name="L_little_ip_joint_motor" joint="L_little_ip_joint" gear="1" ctrllimited="true" ctrlrange="-1.35 1.35"/>
-    <motor name="R_shoulder_pitch_joint_motor" joint="R_shoulder_pitch_joint" gear="1" ctrllimited="true" ctrlrange="-80 80"/>
-    <motor name="R_shoulder_roll_joint_motor" joint="R_shoulder_roll_joint" gear="1" ctrllimited="true" ctrlrange="-80 80"/>
-    <motor name="R_shoulder_yaw_joint_motor" joint="R_shoulder_yaw_joint" gear="1" ctrllimited="true" ctrlrange="-45 45"/>
-    <motor name="R_elbow_roll_joint_motor" joint="R_elbow_roll_joint" gear="1" ctrllimited="true" ctrlrange="-45 45"/>
-    <motor name="R_elbow_yaw_joint_motor" joint="R_elbow_yaw_joint" gear="1" ctrllimited="true" ctrlrange="-20 20"/>
-    <motor name="R_wrist_pitch_joint_motor" joint="R_wrist_pitch_joint" gear="1" ctrllimited="true" ctrlrange="-20 20"/>
-    <motor name="R_wrist_roll_joint_motor" joint="R_wrist_roll_joint" gear="1" ctrllimited="true" ctrlrange="-20 20"/>
-    <motor name="R_thumb_cmp_joint_motor" joint="R_thumb_cmp_joint" gear="1" ctrllimited="true" ctrlrange="-1.35 1.35"/>
-    <motor name="R_thumb_mpp_joint_motor" joint="R_thumb_mpp_joint" gear="1" ctrllimited="true" ctrlrange="-1.35 1.35"/>
-    <motor name="R_thumb_ip_joint_motor" joint="R_thumb_ip_joint" gear="1" ctrllimited="true" ctrlrange="-1.35 1.35"/>
-    <motor name="R_index_mpp_joint_motor" joint="R_index_mpp_joint" gear="1" ctrllimited="true" ctrlrange="-1.35 1.35"/>
-    <motor name="R_index_ip_joint_motor" joint="R_index_ip_joint" gear="1" ctrllimited="true" ctrlrange="-1.35 1.35"/>
-    <motor name="R_middle_mpp_joint_motor" joint="R_middle_mpp_joint" gear="1" ctrllimited="true" ctrlrange="-1.35 1.35"/>
-    <motor name="R_middle_ip_joint_motor" joint="R_middle_ip_joint" gear="1" ctrllimited="true" ctrlrange="-1.35 1.35"/>
-    <motor name="R_ring_mpp_joint_motor" joint="R_ring_mpp_joint" gear="1" ctrllimited="true" ctrlrange="-1.35 1.35"/>
-    <motor name="R_ring_ip_joint_motor" joint="R_ring_ip_joint" gear="1" ctrllimited="true" ctrlrange="-1.35 1.35"/>
-    <motor name="R_little_mpp_joint_motor" joint="R_little_mpp_joint" gear="1" ctrllimited="true" ctrlrange="-1.35 1.35"/>
-    <motor name="R_little_ip_joint_motor" joint="R_little_ip_joint" gear="1" ctrllimited="true" ctrlrange="-1.35 1.35"/>
+<position name="L_hip_roll_joint_servo" joint="L_hip_roll_joint" kp="110" forcelimited="true" forcerange="-220 220" />
+      <position name="L_hip_yaw_joint_servo" joint="L_hip_yaw_joint" kp="30" forcelimited="true" forcerange="-60 60" />
+      <position name="L_hip_pitch_joint_servo" joint="L_hip_pitch_joint" kp="100" forcelimited="true" forcerange="-200 200" />
+      <position name="L_knee_pitch_joint_servo" joint="L_knee_pitch_joint" kp="125" forcelimited="true" forcerange="-250 250" />
+      <position name="L_ankle_pitch_joint_servo" joint="L_ankle_pitch_joint" kp="30" forcelimited="true" forcerange="-60 60" />
+      <position name="L_ankle_roll_joint_servo" joint="L_ankle_roll_joint" kp="30" forcelimited="true" forcerange="-60 60" />
+      <position name="R_hip_roll_joint_servo" joint="R_hip_roll_joint" kp="110" forcelimited="true" forcerange="-220 220" />
+      <position name="R_hip_yaw_joint_servo" joint="R_hip_yaw_joint" kp="30" forcelimited="true" forcerange="-60 60" />
+      <position name="R_hip_pitch_joint_servo" joint="R_hip_pitch_joint" kp="100" forcelimited="true" forcerange="-200 200" />
+      <position name="R_knee_pitch_joint_servo" joint="R_knee_pitch_joint" kp="125" forcelimited="true" forcerange="-250 250" />
+      <position name="R_ankle_pitch_joint_servo" joint="R_ankle_pitch_joint" kp="30" forcelimited="true" forcerange="-60 60" />
+      <position name="R_ankle_roll_joint_servo" joint="R_ankle_roll_joint" kp="30" forcelimited="true" forcerange="-60 60" />
+      <position name="waist_yaw_joint_servo" joint="waist_yaw_joint" kp="125" forcelimited="true" forcerange="-250 250" />
+      <position name="waist_pitch_joint_servo" joint="waist_pitch_joint" kp="125" forcelimited="true" forcerange="-250 250" />
+      <position name="head_yaw_joint_servo" joint="head_yaw_joint" kp="100" />
+      <position name="head_pitch_joint_servo" joint="head_pitch_joint" kp="100" />
+      <position name="L_shoulder_pitch_joint_servo" joint="L_shoulder_pitch_joint" kp="40" forcelimited="true" forcerange="-80 80" />
+      <position name="L_shoulder_roll_joint_servo" joint="L_shoulder_roll_joint" kp="40" forcelimited="true" forcerange="-80 80" />
+      <position name="L_shoulder_yaw_joint_servo" joint="L_shoulder_yaw_joint" kp="22.5" forcelimited="true" forcerange="-45 45" />
+      <position name="L_elbow_roll_joint_servo" joint="L_elbow_roll_joint" kp="22.5" forcelimited="true" forcerange="-45 45" />
+      <position name="L_elbow_yaw_joint_servo" joint="L_elbow_yaw_joint" kp="10" forcelimited="true" forcerange="-20 20" />
+      <position name="L_wrist_pitch_joint_servo" joint="L_wrist_pitch_joint" kp="10" forcelimited="true" forcerange="-20 20" />
+      <position name="L_wrist_roll_joint_servo" joint="L_wrist_roll_joint" kp="10" forcelimited="true" forcerange="-20 20" />
+      <position name="L_thumb_cmp_joint_servo" joint="L_thumb_cmp_joint" kp="0.675" forcelimited="true" forcerange="-1.35 1.35" />
+      <position name="L_thumb_mpp_joint_servo" joint="L_thumb_mpp_joint" kp="0.675" forcelimited="true" forcerange="-1.35 1.35" />
+      <position name="L_thumb_ip_joint_servo" joint="L_thumb_ip_joint" kp="0.675" forcelimited="true" forcerange="-1.35 1.35" />
+      <position name="L_index_mpp_joint_servo" joint="L_index_mpp_joint" kp="0.675" forcelimited="true" forcerange="-1.35 1.35" />
+      <position name="L_index_ip_joint_servo" joint="L_index_ip_joint" kp="0.675" forcelimited="true" forcerange="-1.35 1.35" />
+      <position name="L_middle_mpp_joint_servo" joint="L_middle_mpp_joint" kp="0.675" forcelimited="true" forcerange="-1.35 1.35" />
+      <position name="L_middle_ip_joint_servo" joint="L_middle_ip_joint" kp="0.675" forcelimited="true" forcerange="-1.35 1.35" />
+      <position name="L_ring_mpp_joint_servo" joint="L_ring_mpp_joint" kp="0.675" forcelimited="true" forcerange="-1.35 1.35" />
+      <position name="L_ring_ip_joint_servo" joint="L_ring_ip_joint" kp="0.675" forcelimited="true" forcerange="-1.35 1.35" />
+      <position name="L_little_mpp_joint_servo" joint="L_little_mpp_joint" kp="0.675" forcelimited="true" forcerange="-1.35 1.35" />
+      <position name="L_little_ip_joint_servo" joint="L_little_ip_joint" kp="0.675" forcelimited="true" forcerange="-1.35 1.35" />
+      <position name="R_shoulder_pitch_joint_servo" joint="R_shoulder_pitch_joint" kp="40" forcelimited="true" forcerange="-80 80" />
+      <position name="R_shoulder_roll_joint_servo" joint="R_shoulder_roll_joint" kp="40" forcelimited="true" forcerange="-80 80" />
+      <position name="R_shoulder_yaw_joint_servo" joint="R_shoulder_yaw_joint" kp="22.5" forcelimited="true" forcerange="-45 45" />
+      <position name="R_elbow_roll_joint_servo" joint="R_elbow_roll_joint" kp="22.5" forcelimited="true" forcerange="-45 45" />
+      <position name="R_elbow_yaw_joint_servo" joint="R_elbow_yaw_joint" kp="10" forcelimited="true" forcerange="-20 20" />
+      <position name="R_wrist_pitch_joint_servo" joint="R_wrist_pitch_joint" kp="10" forcelimited="true" forcerange="-20 20" />
+      <position name="R_wrist_roll_joint_servo" joint="R_wrist_roll_joint" kp="10" forcelimited="true" forcerange="-20 20" />
+      <position name="R_thumb_cmp_joint_servo" joint="R_thumb_cmp_joint" kp="0.675" forcelimited="true" forcerange="-1.35 1.35" />
+      <position name="R_thumb_mpp_joint_servo" joint="R_thumb_mpp_joint" kp="0.675" forcelimited="true" forcerange="-1.35 1.35" />
+      <position name="R_thumb_ip_joint_servo" joint="R_thumb_ip_joint" kp="0.675" forcelimited="true" forcerange="-1.35 1.35" />
+      <position name="R_index_mpp_joint_servo" joint="R_index_mpp_joint" kp="0.675" forcelimited="true" forcerange="-1.35 1.35" />
+      <position name="R_index_ip_joint_servo" joint="R_index_ip_joint" kp="0.675" forcelimited="true" forcerange="-1.35 1.35" />
+      <position name="R_middle_mpp_joint_servo" joint="R_middle_mpp_joint" kp="0.675" forcelimited="true" forcerange="-1.35 1.35" />
+      <position name="R_middle_ip_joint_servo" joint="R_middle_ip_joint" kp="0.675" forcelimited="true" forcerange="-1.35 1.35" />
+      <position name="R_ring_mpp_joint_servo" joint="R_ring_mpp_joint" kp="0.675" forcelimited="true" forcerange="-1.35 1.35" />
+      <position name="R_ring_ip_joint_servo" joint="R_ring_ip_joint" kp="0.675" forcelimited="true" forcerange="-1.35 1.35" />
+      <position name="R_little_mpp_joint_servo" joint="R_little_mpp_joint" kp="0.675" forcelimited="true" forcerange="-1.35 1.35" />
+      <position name="R_little_ip_joint_servo" joint="R_little_ip_joint" kp="0.675" forcelimited="true" forcerange="-1.35 1.35" />
   </actuator>
   <sensor>
     <!-- IMU 传感器信息 加速度、⻆速度、 -->
