@@ -41,17 +41,19 @@ def get_spec() -> mujoco.MjSpec:
 # Actuator parameters calculs.
 ##
 
+# params (BeyondMimic paper methodology)
+NATURAL_FREQ = 10 * 2.0 * 3.1415926535  # 10Hz
+DAMPING_RATIO = 2.0  # over-damped
+REDUCTION_RATIO = 100
+factor = 0.01
 
 
 
 
-# ---- arm joints params
 
 
 
 
-
-# joints inertia
 
 
 
