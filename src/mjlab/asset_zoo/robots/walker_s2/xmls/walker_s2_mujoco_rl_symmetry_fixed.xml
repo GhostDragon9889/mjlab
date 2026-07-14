@@ -1,0 +1,450 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="walker_s2_mujoco_rl_symmetry_fixed">
+  <!-- Symmetry-fixed RL model: paired kinematics, collision proxies, sites, masses, COMs, inertia tensors and actuator gains are projected onto exact sagittal symmetry. Pair averages preserve the original pair totals; the result is an idealized training model and does not claim that the physical robot is perfectly symmetric. --><!-- Walker S2 reinforcement-learning model. Joint limits and motor ratings are aligned with the supplied UBTECH SDK documentation where a direct mapping exists. Unknown physical parameters (armature, friction, delays, sensor extrinsics, ankle transmission and CAD-verified inertias) are not fabricated and must be identified or randomized in the task configuration. -->
+  <compiler angle="radian" autolimits="true" inertiafromgeom="false"/>
+  <option timestep="0.002" integrator="implicitfast" solver="Newton" cone="pyramidal"/>
+  <!-- actuator user[0:5] = rated_torque_per_motor[Nm], peak_torque_per_motor[Nm], documented_max_speed[rad/s], physical_motor_count, documented_rated_speed[rad/s]. -->
+  <size nuser_actuator="5"/>
+  <!-- Collision property profiles for MJLab locomotion: non-foot body contacts are frictionless (condim=1), feet use regular frictional contact (condim=3), self-collision is disabled, and finger proxies remain disabled by default. -->
+  <default>
+    <default class="s2_visual">
+      <geom group="1" density="0" contype="0" conaffinity="0"/>
+    </default>
+    <default class="s2_body_collision">
+      <geom group="3" density="0" contype="0" conaffinity="1" condim="1" margin="0" gap="0"/>
+    </default>
+    <default class="s2_foot_collision">
+      <geom group="3" density="0" contype="0" conaffinity="1" condim="3" priority="1" friction="0.60 0.005 0.0001" margin="0" gap="0"/>
+    </default>
+    <default class="s2_finger_proxy">
+      <geom group="4" density="0" contype="0" conaffinity="0" condim="3" friction="0.90 0.005 0.0001" margin="0" gap="0"/>
+    </default>
+  </default>
+  <!-- Collision profile optimized for MJLab locomotion: 14 sole capsules use priority-1 condim=3 contact with sliding friction 0.60; all other active robot collisions use condim=1; self-collision and finger proxies are disabled by default. -->
+  <!-- Collision model simplified for MJLab locomotion: primitive geoms, self-collision disabled by contype=0/conaffinity=1, finger collisions omitted. Dimensions are initial engineering approximations and should be fitted against the real STL/CAD. -->
+  <worldbody>
+    <geom name="ground" type="plane" size="5 5 0.1" pos="0 0 0" contype="1" conaffinity="1" condim="3" friction="0.8 0.005 0.0001" rgba="0.75 0.75 0.75 1"/><body name="base_link" pos="0 0 0">
+      <site name="body_imu" pos="0 0 0" size="0.01"/>
+      <freejoint name="world_joint"/>
+      <inertial pos="-0.063865 0 0.010653" mass="6.3977887" fullinertia="0.056248016415117 0.02883296698942 0.072967016595462 0 -0.0044323003493046 0"/>
+      <body name="L_hip_roll_link" pos="0 0.105 0">
+        <joint name="L_hip_roll_joint" type="hinge" axis="1 0 0" limited="true" range="-0.4014 0.7679" damping="0" frictionloss="0" armature="0"/>
+        <inertial pos="-0.00148155 2.835e-05 -0.0041073" mass="1.32123328" fullinertia="0.00038562253890819 0.00041617764245445 0.00050529981863736 -5.8444798970442e-07 1.4721195340575e-07 -2.8216489715963e-09"/>
+        <body name="L_hip_yaw_link" pos="0 0 -0.0365">
+          <joint name="L_hip_yaw_joint" type="hinge" axis="0 0 -1" limited="true" range="-1.0472 0.7854" damping="0" frictionloss="0" armature="0"/>
+          <inertial pos="0 -0.0075 -0.108566" mass="0.98450062" fullinertia="0.0021138 0.0024843 0.0014629 0 0 0"/>
+          <body name="L_hip_pitch_link" pos="0 0 -0.0855">
+            <joint name="L_hip_pitch_joint" type="hinge" axis="0 -1 0" limited="true" range="-0.5236 1.9024" damping="0" frictionloss="0" armature="0"/>
+            <inertial pos="-0.0026482 0.00250025 -0.147295" mass="4.157285075" fullinertia="0.011125323995131 0.0098292495717485 0.0020445264331206 1.9723883550345e-05 -0.00048415328444156 -0.000152725547997"/>
+            <body name="L_knee_pitch_link" pos="0 0 -0.36">
+              <joint name="L_knee_pitch_joint" type="hinge" axis="0 -1 0" limited="true" range="-2.2515 0.0524" damping="0" frictionloss="0" armature="0"/>
+              <inertial pos="-0.01025205 0.00147175 -0.1860935" mass="3.77348222" fullinertia="0.0021609220820978 0.0019907443581092 0.00039793355979304 1.1008319566267e-05 -3.4798358334793e-05 0.0001035235173851"/>
+              <body name="L_ankle_pitch_link" pos="0 0 -0.37">
+                <!-- Virtual ankle coordinate; hardware uses inside/outside drivers. Do not deploy without an identified transmission map. -->
+                <joint name="L_ankle_pitch_joint" type="hinge" axis="0 -1 0" limited="true" range="-0.5235 1.0471" damping="0" frictionloss="0" armature="0"/>
+                <inertial pos="5e-08 0 1.5e-07" mass="0.065913875" fullinertia="5.8000000036781e-06 5.8000000028484e-06 8.0999999934735e-06 0 -5.7010535416747e-11 6.9474807611524e-11"/>
+                <body name="L_ankle_roll_link" pos="0 0 0">
+                  <!-- Virtual ankle coordinate; hardware uses inside/outside drivers. Do not deploy without an identified transmission map. -->
+                  <joint name="L_ankle_roll_joint" type="hinge" axis="1 0 0" limited="true" range="-0.5235 0.5235" damping="0" frictionloss="0" armature="0"/>
+                  <inertial pos="0.036118 0 -0.03046165" mass="1.0616" fullinertia="0.00098611832284651 0.004264999991336 0.0050645816858175 0 -0.00017053578435956 0"/>
+                  <site name="L_foot" pos="0.03 0 -0.045" size="0.01" group="5" rgba="1 0 0 1"/>
+                  <site name="left_foot" pos="0.03 0 -0.055" size="0.01" group="5" rgba="1 0 0 1"/>
+                  <site name="left_sole" pos="0.03 0 -0.055" size="0.006" group="5" rgba="1 0.2 0.2 1"/>
+                  <site name="L_toe" pos="0.145 0 -0.055" size="0.007" group="5" rgba="1 0.4 0 1"/>
+                  <site name="L_heel" pos="-0.085 0 -0.055" size="0.007" group="5" rgba="0.4 0.4 1 1"/>
+                  <geom rgba="0.15 0.55 0.95 0.34" name="L_foot1_collision" type="capsule" fromto="0.09 -0.044 -0.046 0.045 -0.044 -0.046" size="0.009" class="s2_foot_collision"/>
+                  <geom rgba="0.15 0.55 0.95 0.34" name="L_foot2_collision" type="capsule" fromto="-0.08 -0.032 -0.046 0.14 -0.032 -0.046" size="0.009" class="s2_foot_collision"/>
+                  <geom rgba="0.15 0.55 0.95 0.34" name="L_foot3_collision" type="capsule" fromto="-0.09 -0.018 -0.046 0.15 -0.018 -0.046" size="0.009" class="s2_foot_collision"/>
+                  <geom rgba="0.15 0.55 0.95 0.34" name="L_foot4_collision" type="capsule" fromto="-0.095 0 -0.046 0.155 0 -0.046" size="0.009" class="s2_foot_collision"/>
+                  <geom rgba="0.15 0.55 0.95 0.34" name="L_foot5_collision" type="capsule" fromto="-0.09 0.018 -0.046 0.15 0.018 -0.046" size="0.009" class="s2_foot_collision"/>
+                  <geom rgba="0.15 0.55 0.95 0.34" name="L_foot6_collision" type="capsule" fromto="-0.08 0.032 -0.046 0.14 0.032 -0.046" size="0.009" class="s2_foot_collision"/>
+                  <geom rgba="0.15 0.55 0.95 0.34" name="L_foot7_collision" type="capsule" fromto="0.09 0.044 -0.046 0.045 0.044 -0.046" size="0.009" class="s2_foot_collision"/>
+                </body>
+                <geom rgba="0.18 0.70 0.25 0.30" name="L_ankle_pitch_collision" type="sphere" pos="0 0 0" size="0.046" class="s2_body_collision"/>
+              </body>
+              <geom rgba="0.18 0.70 0.25 0.30" name="L_shin_collision" type="capsule" fromto="0 0 -0.04 0 0 -0.33" size="0.055" class="s2_body_collision"/>
+            </body>
+            <geom rgba="0.18 0.70 0.25 0.30" name="L_thigh_collision" type="capsule" fromto="-0.005 0 -0.04 -0.005 0 -0.315" size="0.07" class="s2_body_collision"/>
+          </body>
+          <geom rgba="0.18 0.70 0.25 0.30" name="L_hip_yaw_collision" type="capsule" fromto="0 0 -0.005 0 0 -0.075" size="0.055" class="s2_body_collision"/>
+        </body>
+        <geom rgba="0.18 0.70 0.25 0.30" name="L_hip_roll_collision" type="sphere" pos="0 0 -0.02" size="0.068" class="s2_body_collision"/>
+      </body>
+      <body name="R_hip_roll_link" pos="0 -0.105 0">
+        <joint name="R_hip_roll_joint" type="hinge" axis="1 0 0" limited="true" range="-0.7679 0.4014" damping="0" frictionloss="0" armature="0"/>
+        <inertial pos="-0.00148155 -2.835e-05 -0.0041073" mass="1.32123328" fullinertia="0.00038562253890819 0.00041617764245445 0.00050529981863736 5.8444798970442e-07 1.4721195340575e-07 2.8216489715963e-09"/>
+        <body name="R_hip_yaw_link" pos="0 0 -0.0365">
+          <joint name="R_hip_yaw_joint" type="hinge" axis="0 0 -1" limited="true" range="-0.7854 1.0472" damping="0" frictionloss="0" armature="0"/>
+          <inertial pos="0 0.0075 -0.108566" mass="0.98450062" fullinertia="0.0021138 0.0024843 0.0014629 0 0 0"/>
+          <body name="R_hip_pitch_link" pos="0 0 -0.0855">
+            <joint name="R_hip_pitch_joint" type="hinge" axis="0 -1 0" limited="true" range="-0.5236 1.9024" damping="0" frictionloss="0" armature="0"/>
+            <inertial pos="-0.0026482 -0.00250025 -0.147295" mass="4.157285075" fullinertia="0.011125323995131 0.0098292495717485 0.0020445264331206 -1.9723883550345e-05 -0.00048415328444156 0.000152725547997"/>
+            <body name="R_knee_pitch_link" pos="0 0 -0.36">
+              <joint name="R_knee_pitch_joint" type="hinge" axis="0 -1 0" limited="true" range="-2.2515 0.0524" damping="0" frictionloss="0" armature="0"/>
+              <inertial pos="-0.01025205 -0.00147175 -0.1860935" mass="3.77348222" fullinertia="0.0021609220820978 0.0019907443581092 0.00039793355979304 -1.1008319566267e-05 -3.4798358334793e-05 -0.0001035235173851"/>
+              <body name="R_ankle_pitch_link" pos="0 0 -0.37">
+                <!-- Virtual ankle coordinate; hardware uses inside/outside drivers. Do not deploy without an identified transmission map. -->
+                <joint name="R_ankle_pitch_joint" type="hinge" axis="0 -1 0" limited="true" range="-0.5235 1.0471" damping="0" frictionloss="0" armature="0"/>
+                <inertial pos="5e-08 0 1.5e-07" mass="0.065913875" fullinertia="5.8000000036781e-06 5.8000000028484e-06 8.0999999934735e-06 0 -5.7010535416747e-11 -6.9474807611524e-11"/>
+                <body name="R_ankle_roll_link" pos="0 0 0">
+                  <!-- Virtual ankle coordinate; hardware uses inside/outside drivers. Do not deploy without an identified transmission map. -->
+                  <joint name="R_ankle_roll_joint" type="hinge" axis="1 0 0" limited="true" range="-0.5235 0.5235" damping="0" frictionloss="0" armature="0"/>
+                  <inertial pos="0.036118 0 -0.03046165" mass="1.0616" fullinertia="0.00098611832284651 0.004264999991336 0.0050645816858175 0 -0.00017053578435956 0"/>
+                  <site name="R_foot" pos="0.03 0 -0.045" size="0.01" group="5" rgba="1 0 0 1"/>
+                  <site name="right_foot" pos="0.03 0 -0.055" size="0.01" group="5" rgba="1 0 0 1"/>
+                  <site name="right_sole" pos="0.03 0 -0.055" size="0.006" group="5" rgba="1 0.2 0.2 1"/>
+                  <site name="R_toe" pos="0.145 0 -0.055" size="0.007" group="5" rgba="1 0.4 0 1"/>
+                  <site name="R_heel" pos="-0.085 0 -0.055" size="0.007" group="5" rgba="0.4 0.4 1 1"/>
+                  <geom rgba="0.15 0.55 0.95 0.34" name="R_foot1_collision" type="capsule" fromto="0.09 -0.044 -0.046 0.045 -0.044 -0.046" size="0.009" class="s2_foot_collision"/>
+                  <geom rgba="0.15 0.55 0.95 0.34" name="R_foot2_collision" type="capsule" fromto="-0.08 -0.032 -0.046 0.14 -0.032 -0.046" size="0.009" class="s2_foot_collision"/>
+                  <geom rgba="0.15 0.55 0.95 0.34" name="R_foot3_collision" type="capsule" fromto="-0.09 -0.018 -0.046 0.15 -0.018 -0.046" size="0.009" class="s2_foot_collision"/>
+                  <geom rgba="0.15 0.55 0.95 0.34" name="R_foot4_collision" type="capsule" fromto="-0.095 0 -0.046 0.155 0 -0.046" size="0.009" class="s2_foot_collision"/>
+                  <geom rgba="0.15 0.55 0.95 0.34" name="R_foot5_collision" type="capsule" fromto="-0.09 0.018 -0.046 0.15 0.018 -0.046" size="0.009" class="s2_foot_collision"/>
+                  <geom rgba="0.15 0.55 0.95 0.34" name="R_foot6_collision" type="capsule" fromto="-0.08 0.032 -0.046 0.14 0.032 -0.046" size="0.009" class="s2_foot_collision"/>
+                  <geom rgba="0.15 0.55 0.95 0.34" name="R_foot7_collision" type="capsule" fromto="0.09 0.044 -0.046 0.045 0.044 -0.046" size="0.009" class="s2_foot_collision"/>
+                </body>
+                <geom rgba="0.18 0.70 0.25 0.30" name="R_ankle_pitch_collision" type="sphere" pos="0 0 0" size="0.046" class="s2_body_collision"/>
+              </body>
+              <geom rgba="0.18 0.70 0.25 0.30" name="R_shin_collision" type="capsule" fromto="0 0 -0.04 0 0 -0.33" size="0.055" class="s2_body_collision"/>
+            </body>
+            <geom rgba="0.18 0.70 0.25 0.30" name="R_thigh_collision" type="capsule" fromto="-0.005 0 -0.04 -0.005 0 -0.315" size="0.07" class="s2_body_collision"/>
+          </body>
+          <geom rgba="0.18 0.70 0.25 0.30" name="R_hip_yaw_collision" type="capsule" fromto="0 0 -0.005 0 0 -0.075" size="0.055" class="s2_body_collision"/>
+        </body>
+        <geom rgba="0.18 0.70 0.25 0.30" name="R_hip_roll_collision" type="sphere" pos="0 0 -0.02" size="0.068" class="s2_body_collision"/>
+      </body>
+      <body name="waist_yaw_link" pos="0 0 0.0685">
+        <joint name="waist_yaw_joint" type="hinge" axis="0 0 -1" limited="true" range="-2.7925 2.7925" damping="0" frictionloss="0" armature="0"/>
+        <inertial pos="-0.0002965 0 -0.0399755" mass="0.51683988" fullinertia="0.00091257309134817 0.00069226556977431 0.00079966133887752 0 7.8830801725795e-06 0"/>
+        <body name="waist_pitch_link" pos="0 0 0.0745">
+          <joint name="waist_pitch_joint" type="hinge" axis="0 -1 0" limited="true" range="-1.5533 0.6109" damping="0" frictionloss="0" armature="0"/>
+          <inertial pos="-0.0126777 0 0.196974" mass="23.78819178" fullinertia="0.046048813503242 0.032348656630208 0.017862929866549 0 0.00015283552940319 0"/>
+          <body name="torso_link" pos="0 0 0.2">
+            <!--Coordinate frame only: removed duplicate mass=1 with zero inertia.-->
+          </body>
+          <body name="head_yaw_link" pos="0.0031354 0 0.48409" quat="0.999994756693 0 0.00323829985976 0">
+            <joint name="head_yaw_joint" type="hinge" axis="0 0 1" limited="true" range="-1.6406 1.6406" damping="0" frictionloss="0" armature="0"/>
+            <inertial pos="0.0002268 0 0.0227083" mass="0.58109743" fullinertia="2.8800793364779e-05 4.6789583713747e-05 3.2109622921474e-05 0 -5.0222601358575e-08 0"/>
+            <body name="head_pitch_link" pos="0 0 0.025">
+              <site name="head_imu" pos="0 0 0.025" size="0.01"/>
+              <joint name="head_pitch_joint" type="hinge" axis="0 -1 0" limited="true" range="-0.6807 0.5061" damping="0" frictionloss="0" armature="0"/>
+              <inertial pos="0.0493311 0 0.106461" mass="1.06900742" fullinertia="0.001350399116074 0.00091799936307953 0.00073790152084649 0 -2.2162561301791e-05 0"/>
+              <geom rgba="0.18 0.70 0.25 0.30" name="head_collision" type="ellipsoid" pos="0.045 0 0.09" size="0.105 0.090 0.112" class="s2_body_collision"/>
+            </body>
+            <geom rgba="0.18 0.70 0.25 0.30" name="neck_collision" type="capsule" fromto="0 0 -0.015 0 0 0.055" size="0.055" class="s2_body_collision"/>
+          </body>
+          <body name="L_shoulder_pitch_link" pos="-0.0023453 0.150912 0.348138" quat="0.996193509649 0.0871546814649 0.00153885055405 -0.000429850155318">
+            <joint name="L_shoulder_pitch_joint" type="hinge" axis="0 -1 0" limited="true" range="-2.8274 2.8274" damping="0" frictionloss="0" armature="0"/>
+            <inertial pos="0 0.0504174 2e-07" mass="0.961823375" fullinertia="0.00059219999999555 0.00052270000008381 0.00062109999992063 0 -1.9073427723483e-14 0"/>
+            <body name="L_shoulder_roll_link" pos="0 0.063 0">
+              <joint name="L_shoulder_roll_joint" type="hinge" axis="-1 0 0" limited="true" range="-1.85 0.0873" damping="0" frictionloss="0" armature="0"/>
+              <inertial pos="0.00100975 0.0027469 -0.03795525" mass="0.54148486" fullinertia="0.0010198172500842 0.0013175484939003 0.0009854342560155 -7.9321794448989e-06 1.0282974883563e-05 2.2943444264554e-05"/>
+              <body name="L_shoulder_yaw_link" pos="-0.00115845 -1.795e-05 -0.0830197" quat="0.999999955322 -3.85005947668e-06 -1.21001858024e-05 0.000298654586674">
+                <joint name="L_shoulder_yaw_joint" type="hinge" axis="0 0 -1" limited="true" range="-2.8972 2.8972" damping="0" frictionloss="0" armature="0"/>
+                <inertial pos="0.00382995 0.00252475 -0.127887" mass="1.99523145" fullinertia="0.0024570063119925 0.0025299019412716 0.00085614174673592 1.1443225712913e-05 -0.00019696645616682 -6.9169518035264e-05"/>
+                <body name="L_elbow_roll_link" pos="0.0199928 0 -0.213">
+                  <joint name="L_elbow_roll_joint" type="hinge" axis="0 1 0" limited="true" range="-2.618 0" damping="0" frictionloss="0" armature="0"/>
+                  <inertial pos="-0.0063559 -0.0004531 -0.05175345" mass="0.68765335" fullinertia="0.0016359086463584 0.0012174279162751 0.00099651343736654 -6.3826215981078e-06 0.00014803093587897 -1.5286779799072e-05"/>
+                  <body name="L_elbow_yaw_link" pos="-0.0199928 0 -0.118181">
+                    <joint name="L_elbow_yaw_joint" type="hinge" axis="0 0 -1" limited="true" range="-2.9147 2.9147" damping="0" frictionloss="0" armature="0"/>
+                    <inertial pos="1.85e-06 0.0008042 -0.0746622" mass="0.858046155" fullinertia="0.0003579704579377 0.00047165990367447 0.00038516963838783 -1.9840187583735e-09 -2.054206784217e-09 6.2113524537275e-06"/>
+                    <body name="L_wrist_pitch_link" pos="0 0 -0.103819">
+                      <joint name="L_wrist_pitch_joint" type="hinge" axis="0 -1 0" limited="true" range="-1.5882 1.5882" damping="0" frictionloss="0" armature="0"/>
+                      <inertial pos="0 0 -0.038" mass="1.2811" fullinertia="0.00126165 0.00126165 0.0005298 0 0 0"/>
+                      <body name="L_wrist_roll_link" pos="0 0 -0.076">
+                        <joint name="L_wrist_roll_joint" type="hinge" axis="-1 0 0" limited="true" range="-1.9897 1.9897" damping="0" frictionloss="0" armature="0"/>
+                        <inertial pos="-2e-07 -0.0485012 -0.08546755" mass="0.15277117" fullinertia="0.00076614999660301 0.0003778234742182 0.00069182652917878 2.2602651189729e-09 7.1855554703926e-10 -0.00010399460695159"/>
+                        <body name="L_wrist_roll_link_geom_1" pos="0 0 0">
+                          <!--Restored six-axis force-sensor housing inertia from the original Walker S2 URDF; the complete hand subtree remains downstream of this sensor body.-->
+                          <inertial pos="-0.001226279365 -1.6310692055e-05 -0.0717545308364" mass="0.2454098" fullinertia="7.518944474215e-05 9.35002978262e-05 0.0001060102574315 1.4055419625e-10 -2.05065315872e-06 1.2397386805e-10"/>
+                          <!--Coordinate/visual helper frame only; placeholder inertial removed.-->
+                          <geom rgba="0.18 0.70 0.25 0.30" name="L_sixforce_collision" type="cylinder" pos="-0.0011447 -1.64e-05 -0.08309275" size="0.038 0.018" class="s2_body_collision" quat="0.999999172054 -3.89997734467e-06 0.00128680489844 3.15001199105e-06"/>
+                          <!-- Site belongs to the welded sensor child body; force/torque therefore measures the complete hand subtree. -->
+                          <site name="L_wrist_ft" pos="-0.0011447 -1.64e-05 -0.08309275" size="0.008" group="5" rgba="0 1 1 1"/>
+                          <body name="L_hand_base_link" pos="0 0 -0.085" quat="9.89555580515e-07 -0.706825190557 0.707388259722 -9.89555563646e-07">
+                            <!--Combined hand-base+palm inertia approximated as the active collision box; replace with CAD inertia when available.-->
+                            <inertial pos="0 0 0.06" mass="0.66238427" fullinertia="0.0011192086 0.0012569845 0.0006787231 0 0 0"/>
+                            <body name="L_palm_link" pos="0 0 0">
+                              <!--Mass transferred to parent hand_base_link; this body is retained as a kinematic frame.-->
+                              <body name="L_thumb_cmp_link" pos="0.00035655 -1e-07 0.0512" quat="7.7781609945e-07 -0.91740837287 0.397947078627 -2.12131728357e-07">
+                                <joint name="L_thumb_cmp_joint" type="hinge" axis="0 0 1" limited="true" range="-2.11 0" damping="0" frictionloss="0" armature="0"/>
+                                <inertial pos="0.0056308 -0.00075 -0.0043585" mass="0.0151103" fullinertia="9.3806341570195e-07 1.0895203261377e-06 1.0724162581603e-06 6.9297248594848e-08 2.8450641238469e-07 -2.6587982116874e-08"/>
+                                <body name="L_thumb_mpp_link" pos="0.012 -0.0010557 -0.010045" quat="0.052325936483 0.998630058313 -3.66987904878e-05 4.07292934894e-05">
+                                  <joint name="L_thumb_mpp_joint" type="hinge" axis="0 0 1" limited="true" range="0 1.85" damping="0" frictionloss="0" armature="0"/>
+                                  <inertial pos="0.0361842 0 0" mass="0.067412" fullinertia="6.3652796530165e-06 3.2934739139798e-05 3.2699981207185e-05 9.3320316540152e-15 2.7794736988818e-12 2.5008576121295e-10"/>
+                                  <body name="L_thumb_ip_link" pos="0.075 -5.8e-06 0" quat="0.999995438238 0 0 -0.00302051363688">
+                                    <joint name="L_thumb_ip_joint" type="hinge" axis="0 0 1" limited="true" range="0 1.09" damping="0" frictionloss="0" armature="0"/>
+                                    <inertial pos="0.0135371 0 0" mass="0.0173112" fullinertia="1.0280135317122e-06 1.8719864682878e-06 1.8e-06 0 0 0"/>
+                                    <geom rgba="0.95 0.35 0.10 0.28" name="L_thumb_distal_finger_collision" type="capsule" fromto="0 0 0 0.035 0 0" size="0.009" class="s2_finger_proxy"/>
+                                  </body>
+                                  <geom rgba="0.95 0.35 0.10 0.28" name="L_thumb_proximal_finger_collision" type="capsule" fromto="0 0 0 0.065 0 0" size="0.011" class="s2_finger_proxy"/>
+                                </body>
+                                <geom rgba="0.95 0.35 0.10 0.28" name="L_thumb_base_finger_collision" type="capsule" fromto="0 0 0 0.015 0 0" size="0.012" class="s2_finger_proxy"/>
+                              </body>
+                              <body name="L_index_mpp_link" pos="0.00035665 -1e-07 0.1415955" quat="0.000644628923739 -0.707105482766 -0.000644671940282 -0.707107491895">
+                                <joint name="L_index_mpp_joint" type="hinge" axis="0 0 1" limited="true" range="0 1.71" damping="0" frictionloss="0" armature="0"/>
+                                <inertial pos="0.0152531 0 0" mass="0.0147008" fullinertia="9e-07 3.6e-06 3.5e-06 0 0 0"/>
+                                <body name="L_index_ip_link" pos="0.0388 0 0">
+                                  <joint name="L_index_ip_joint" type="hinge" axis="0 0 1" limited="true" range="0 1.76" damping="0" frictionloss="0" armature="0"/>
+                                  <inertial pos="0.0168086 0 0" mass="0.0133493" fullinertia="4.3799523290854e-07 2.6620047670915e-06 2.6e-06 0 0 0"/>
+                                  <geom rgba="0.95 0.35 0.10 0.28" name="L_index_distal_finger_collision" type="capsule" fromto="0 0 0 0.032 0 0" size="0.008" class="s2_finger_proxy"/>
+                                </body>
+                                <geom rgba="0.95 0.35 0.10 0.28" name="L_index_proximal_finger_collision" type="capsule" fromto="0 0 0 0.036 0 0" size="0.009" class="s2_finger_proxy"/>
+                              </body>
+                              <body name="L_middle_mpp_link" pos="0.00073165 0 0.1418" quat="0.000305355114677 -0.703674850912 -0.000300184818354 -0.710522005881">
+                                <joint name="L_middle_mpp_joint" type="hinge" axis="0 0 1" limited="true" range="0 1.71" damping="0" frictionloss="0" armature="0"/>
+                                <inertial pos="0.0147601 0 0" mass="0.0143021" fullinertia="9.0033789827476e-07 3.3996621017253e-06 3.3999999999999e-06 0 -4.9995776399188e-13 0"/>
+                                <body name="L_middle_ip_link" pos="0.0388035 0 0" quat="0.999988292297 -2.92008724931e-05 -0.00483884457988 -2.00088251726e-07">
+                                  <joint name="L_middle_ip_joint" type="hinge" axis="0 0 1" limited="true" range="0 1.76" damping="0" frictionloss="0" armature="0"/>
+                                  <inertial pos="0.0177132 0 0" mass="0.0148881" fullinertia="4.4838364239181e-07 3.4516163576082e-06 3.4e-06 0 -2.7711176499555e-13 0"/>
+                                  <geom rgba="0.95 0.35 0.10 0.28" name="L_middle_distal_finger_collision" type="capsule" fromto="0 0 0 0.032 0 0" size="0.008" class="s2_finger_proxy"/>
+                                </body>
+                                <geom rgba="0.95 0.35 0.10 0.28" name="L_middle_proximal_finger_collision" type="capsule" fromto="0 0 0 0.036 0 0" size="0.009" class="s2_finger_proxy"/>
+                              </body>
+                              <body name="L_ring_mpp_link" pos="0.00035615 0 0.1415955" quat="0.000644628923739 0.707105482766 -0.000644671940282 0.707107491895">
+                                <joint name="L_ring_mpp_joint" type="hinge" axis="0 0 1" limited="true" range="0 1.71" damping="0" frictionloss="0" armature="0"/>
+                                <inertial pos="0.0147595 0 0" mass="0.0143021" fullinertia="9.0033789827476e-07 3.3996621017253e-06 3.3999999999999e-06 0 -4.9995776399188e-13 0"/>
+                                <body name="L_ring_ip_link" pos="0.0388 0 0">
+                                  <joint name="L_ring_ip_joint" type="hinge" axis="0 0 1" limited="true" range="0 1.76" damping="0" frictionloss="0" armature="0"/>
+                                  <inertial pos="0.0161543 0 0" mass="0.0137479" fullinertia="4.45098430451e-07 2.854901569549e-06 2.8e-06 0 0 0"/>
+                                  <geom rgba="0.95 0.35 0.10 0.28" name="L_ring_distal_finger_collision" type="capsule" fromto="0 0 0 0.032 0 0" size="0.008" class="s2_finger_proxy"/>
+                                </body>
+                                <geom rgba="0.95 0.35 0.10 0.28" name="L_ring_proximal_finger_collision" type="capsule" fromto="0 0 0 0.036 0 0" size="0.009" class="s2_finger_proxy"/>
+                              </body>
+                              <body name="L_little_mpp_link" pos="0.00035615 1e-07 0.140981" quat="0.0012893959276 0.707104600777 -0.00128939140477 0.707106610412">
+                                <joint name="L_little_mpp_joint" type="hinge" axis="0 0 1" limited="true" range="0 1.71" damping="0" frictionloss="0" armature="0"/>
+                                <inertial pos="0.0147588 0 0" mass="0.0143021" fullinertia="9.0033789827476e-07 3.3996621017253e-06 3.3999999999999e-06 0 -4.9995776399188e-13 0"/>
+                                <body name="L_little_ip_link" pos="0.0388 0 0">
+                                  <joint name="L_little_ip_joint" type="hinge" axis="0 0 1" limited="true" range="0 1.76" damping="0" frictionloss="0" armature="0"/>
+                                  <inertial pos="0.0130333 0 0" mass="0.0117927" fullinertia="3.3511152055167e-07 1.7648884794483e-06 1.8e-06 0 0 0"/>
+                                  <geom rgba="0.95 0.35 0.10 0.28" name="L_little_distal_finger_collision" type="capsule" fromto="0 0 0 0.032 0 0" size="0.008" class="s2_finger_proxy"/>
+                                </body>
+                                <geom rgba="0.95 0.35 0.10 0.28" name="L_little_proximal_finger_collision" type="capsule" fromto="0 0 0 0.036 0 0" size="0.009" class="s2_finger_proxy"/>
+                              </body>
+                            </body>
+                            <geom rgba="0.70 0.55 0.15 0.32" name="L_hand_collision" type="box" pos="0 0 0.06" size="0.043 0.035 0.062" class="s2_body_collision"/>
+                          </body>
+                        </body>
+                        <geom rgba="0.18 0.70 0.25 0.30" name="L_wrist_roll_collision" type="capsule" fromto="0 0 -0.005 0 0 -0.075" size="0.034" class="s2_body_collision"/>
+                      </body>
+                      <geom rgba="0.18 0.70 0.25 0.30" name="L_wrist_pitch_collision" type="capsule" fromto="0 0 -0.005 0 0 -0.065" size="0.035" class="s2_body_collision"/>
+                    </body>
+                    <geom rgba="0.18 0.70 0.25 0.30" name="L_forearm_collision" type="capsule" fromto="0 0 -0.012 0 0 -0.095" size="0.043" class="s2_body_collision"/>
+                  </body>
+                  <geom rgba="0.18 0.70 0.25 0.30" name="L_elbow_collision" type="sphere" pos="0 0 -0.025" size="0.055" class="s2_body_collision"/>
+                </body>
+                <geom rgba="0.18 0.70 0.25 0.30" name="L_upper_arm_collision" type="capsule" fromto="0 0 -0.02 0 0 -0.195" size="0.052" class="s2_body_collision"/>
+              </body>
+              <geom rgba="0.18 0.70 0.25 0.30" name="L_shoulder_roll_collision" type="capsule" fromto="0 0 -0.005 0 0 -0.075" size="0.055" class="s2_body_collision"/>
+            </body>
+            <geom rgba="0.18 0.70 0.25 0.30" name="L_shoulder_pitch_collision" type="sphere" pos="0 0 0" size="0.075" class="s2_body_collision"/>
+          </body>
+          <body name="R_shoulder_pitch_link" pos="-0.0023453 -0.150912 0.348138" quat="0.996193509649 -0.0871546814649 0.00153885055405 0.000429850155318">
+            <joint name="R_shoulder_pitch_joint" type="hinge" axis="0 1 0" limited="true" range="-2.8274 2.8274" damping="0" frictionloss="0" armature="0"/>
+            <inertial pos="0 -0.0504174 2e-07" mass="0.961823375" fullinertia="0.00059219999999555 0.00052270000008381 0.00062109999992063 0 -1.9073427723483e-14 0"/>
+            <body name="R_shoulder_roll_link" pos="0 -0.063 0">
+              <joint name="R_shoulder_roll_joint" type="hinge" axis="1 0 0" limited="true" range="-1.85 0.0873" damping="0" frictionloss="0" armature="0"/>
+              <inertial pos="0.00100975 -0.0027469 -0.03795525" mass="0.54148486" fullinertia="0.0010198172500842 0.0013175484939003 0.0009854342560155 7.9321794448989e-06 1.0282974883563e-05 -2.2943444264554e-05"/>
+              <body name="R_shoulder_yaw_link" pos="-0.00115845 1.795e-05 -0.0830197" quat="0.999999955322 3.85005947668e-06 -1.21001858024e-05 -0.000298654586674">
+                <joint name="R_shoulder_yaw_joint" type="hinge" axis="0 0 -1" limited="true" range="-2.8972 2.8972" damping="0" frictionloss="0" armature="0"/>
+                <inertial pos="0.00382995 -0.00252475 -0.127887" mass="1.99523145" fullinertia="0.0024570063119925 0.0025299019412716 0.00085614174673592 -1.1443225712913e-05 -0.00019696645616682 6.9169518035264e-05"/>
+                <body name="R_elbow_roll_link" pos="0.0199928 0 -0.213">
+                  <joint name="R_elbow_roll_joint" type="hinge" axis="0 1 0" limited="true" range="-2.618 0" damping="0" frictionloss="0" armature="0"/>
+                  <inertial pos="-0.0063559 0.0004531 -0.05175345" mass="0.68765335" fullinertia="0.0016359086463584 0.0012174279162751 0.00099651343736654 6.3826215981078e-06 0.00014803093587897 1.5286779799072e-05"/>
+                  <body name="R_elbow_yaw_link" pos="-0.0199928 0 -0.118181">
+                    <joint name="R_elbow_yaw_joint" type="hinge" axis="0 0 -1" limited="true" range="-2.9147 2.9147" damping="0" frictionloss="0" armature="0"/>
+                    <inertial pos="1.85e-06 -0.0008042 -0.0746622" mass="0.858046155" fullinertia="0.0003579704579377 0.00047165990367447 0.00038516963838783 1.9840187583735e-09 -2.054206784217e-09 -6.2113524537275e-06"/>
+                    <body name="R_wrist_pitch_link" pos="0 0 -0.103819">
+                      <joint name="R_wrist_pitch_joint" type="hinge" axis="0 1 0" limited="true" range="-1.5882 1.5882" damping="0" frictionloss="0" armature="0"/>
+                      <inertial pos="0 0 -0.038" mass="1.2811" fullinertia="0.00126165 0.00126165 0.0005298 0 0 0"/>
+                      <body name="R_wrist_roll_link" pos="0 0 -0.076">
+                        <joint name="R_wrist_roll_joint" type="hinge" axis="1 0 0" limited="true" range="-1.9897 1.9897" damping="0" frictionloss="0" armature="0"/>
+                        <inertial pos="-2e-07 0.0485012 -0.08546755" mass="0.15277117" fullinertia="0.00076614999660301 0.0003778234742182 0.00069182652917878 -2.2602651189729e-09 7.1855554703926e-10 0.00010399460695159"/>
+                        <body name="R_wrist_roll_link_geom_1" pos="0 0 0">
+                          <!--Restored six-axis force-sensor housing inertia from the original Walker S2 URDF; the complete hand subtree remains downstream of this sensor body.-->
+                          <inertial pos="-0.001226279365 1.6310692055e-05 -0.0717545308364" mass="0.2454098" fullinertia="7.518944474215e-05 9.35002978262e-05 0.0001060102574315 -1.4055419625e-10 -2.05065315872e-06 -1.2397386805e-10"/>
+                          <!--Coordinate/visual helper frame only; placeholder inertial removed.-->
+                          <geom rgba="0.18 0.70 0.25 0.30" name="R_sixforce_collision" type="cylinder" pos="-0.0011447 1.64e-05 -0.08309275" size="0.038 0.018" class="s2_body_collision" quat="0.999999172054 3.89997734467e-06 0.00128680489844 -3.15001199105e-06"/>
+                          <!-- Site belongs to the welded sensor child body; force/torque therefore measures the complete hand subtree. -->
+                          <site name="R_wrist_ft" pos="-0.0011447 1.64e-05 -0.08309275" size="0.008" group="5" rgba="0 1 1 1"/>
+                          <body name="R_hand_base_link" pos="0 0 -0.085" quat="9.89555580515e-07 0.706825190557 0.707388259722 9.89555563646e-07">
+                            <!-- add diaginertia -->
+                            <!--Combined hand-base+palm inertia approximated as the active collision box; replace with CAD inertia when available.-->
+                            <inertial pos="0 0 0.06" mass="0.66238427" fullinertia="0.0011192086 0.0012569845 0.0006787231 0 0 0"/>
+                            <body name="R_palm_link" pos="0 0 0">
+                              <!--Mass transferred to parent hand_base_link; this body is retained as a kinematic frame.-->
+                              <body name="R_thumb_cmp_link" pos="0.00035655 1e-07 0.0512" quat="7.7781609945e-07 0.91740837287 0.397947078627 2.12131728357e-07">
+                                <joint name="R_thumb_cmp_joint" type="hinge" axis="0 0 1" limited="true" range="0 2.11" damping="0" frictionloss="0" armature="0"/>
+                                <inertial pos="0.0056308 0.00075 -0.0043585" mass="0.0151103" fullinertia="9.3806341570195e-07 1.0895203261377e-06 1.0724162581603e-06 -6.9297248594848e-08 2.8450641238469e-07 2.6587982116874e-08"/>
+                                <body name="R_thumb_mpp_link" pos="0.012 0.0010557 -0.010045" quat="0.052325936483 -0.998630058313 -3.66987904878e-05 -4.07292934894e-05">
+                                  <joint name="R_thumb_mpp_joint" type="hinge" axis="0 0 -1" limited="true" range="0 1.85" damping="0" frictionloss="0" armature="0"/>
+                                  <inertial pos="0.0361842 0 0" mass="0.067412" fullinertia="6.3652796530165e-06 3.2934739139798e-05 3.2699981207185e-05 -9.3320316540152e-15 2.7794736988818e-12 -2.5008576121295e-10"/>
+                                  <body name="R_thumb_ip_link" pos="0.075 5.8e-06 0" quat="0.999995438238 0 0 0.00302051363688">
+                                    <joint name="R_thumb_ip_joint" type="hinge" axis="0 0 -1" limited="true" range="0 1.09" damping="0" frictionloss="0" armature="0"/>
+                                    <inertial pos="0.0135371 0 0" mass="0.0173112" fullinertia="1.0280135317122e-06 1.8719864682878e-06 1.8e-06 0 0 0"/>
+                                    <geom rgba="0.95 0.35 0.10 0.28" name="R_thumb_distal_finger_collision" type="capsule" fromto="0 0 0 0.035 0 0" size="0.009" class="s2_finger_proxy"/>
+                                  </body>
+                                  <geom rgba="0.95 0.35 0.10 0.28" name="R_thumb_proximal_finger_collision" type="capsule" fromto="0 0 0 0.065 0 0" size="0.011" class="s2_finger_proxy"/>
+                                </body>
+                                <geom rgba="0.95 0.35 0.10 0.28" name="R_thumb_base_finger_collision" type="capsule" fromto="0 0 0 0.015 0 0" size="0.012" class="s2_finger_proxy"/>
+                              </body>
+                              <body name="R_index_mpp_link" pos="0.00035665 1e-07 0.1415955" quat="0.000644628923739 0.707105482766 -0.000644671940282 0.707107491895">
+                                <joint name="R_index_mpp_joint" type="hinge" axis="0 0 -1" limited="true" range="0 1.71" damping="0" frictionloss="0" armature="0"/>
+                                <inertial pos="0.0152531 0 0" mass="0.0147008" fullinertia="9e-07 3.6e-06 3.5e-06 0 0 0"/>
+                                <body name="R_index_ip_link" pos="0.0388 0 0">
+                                  <joint name="R_index_ip_joint" type="hinge" axis="0 0 -1" limited="true" range="0 1.76" damping="0" frictionloss="0" armature="0"/>
+                                  <inertial pos="0.0168086 0 0" mass="0.0133493" fullinertia="4.3799523290854e-07 2.6620047670915e-06 2.6e-06 0 0 0"/>
+                                  <geom rgba="0.95 0.35 0.10 0.28" name="R_index_distal_finger_collision" type="capsule" fromto="0 0 0 0.032 0 0" size="0.008" class="s2_finger_proxy"/>
+                                </body>
+                                <geom rgba="0.95 0.35 0.10 0.28" name="R_index_proximal_finger_collision" type="capsule" fromto="0 0 0 0.036 0 0" size="0.009" class="s2_finger_proxy"/>
+                              </body>
+                              <body name="R_middle_mpp_link" pos="0.00073165 0 0.1418" quat="0.000305355114677 0.703674850912 -0.000300184818354 0.710522005881">
+                                <joint name="R_middle_mpp_joint" type="hinge" axis="0 0 -1" limited="true" range="0 1.71" damping="0" frictionloss="0" armature="0"/>
+                                <inertial pos="0.0147601 0 0" mass="0.0143021" fullinertia="9.0033789827476e-07 3.3996621017253e-06 3.3999999999999e-06 0 -4.9995776399188e-13 0"/>
+                                <body name="R_middle_ip_link" pos="0.0388035 0 0" quat="0.999988292297 2.92008724931e-05 -0.00483884457988 2.00088251726e-07">
+                                  <joint name="R_middle_ip_joint" type="hinge" axis="0 0 -1" limited="true" range="0 1.76" damping="0" frictionloss="0" armature="0"/>
+                                  <inertial pos="0.0177132 0 0" mass="0.0148881" fullinertia="4.4838364239181e-07 3.4516163576082e-06 3.4e-06 0 -2.7711176499555e-13 0"/>
+                                  <geom rgba="0.95 0.35 0.10 0.28" name="R_middle_distal_finger_collision" type="capsule" fromto="0 0 0 0.032 0 0" size="0.008" class="s2_finger_proxy"/>
+                                </body>
+                                <geom rgba="0.95 0.35 0.10 0.28" name="R_middle_proximal_finger_collision" type="capsule" fromto="0 0 0 0.036 0 0" size="0.009" class="s2_finger_proxy"/>
+                              </body>
+                              <body name="R_ring_mpp_link" pos="0.00035615 0 0.1415955" quat="0.000644628923739 -0.707105482766 -0.000644671940282 -0.707107491895">
+                                <joint name="R_ring_mpp_joint" type="hinge" axis="0 0 -1" limited="true" range="0 1.71" damping="0" frictionloss="0" armature="0"/>
+                                <inertial pos="0.0147595 0 0" mass="0.0143021" fullinertia="9.0033789827476e-07 3.3996621017253e-06 3.3999999999999e-06 0 -4.9995776399188e-13 0"/>
+                                <body name="R_ring_ip_link" pos="0.0388 0 0">
+                                  <joint name="R_ring_ip_joint" type="hinge" axis="0 0 -1" limited="true" range="0 1.76" damping="0" frictionloss="0" armature="0"/>
+                                  <inertial pos="0.0161543 0 0" mass="0.0137479" fullinertia="4.45098430451e-07 2.854901569549e-06 2.8e-06 0 0 0"/>
+                                  <geom rgba="0.95 0.35 0.10 0.28" name="R_ring_distal_finger_collision" type="capsule" fromto="0 0 0 0.032 0 0" size="0.008" class="s2_finger_proxy"/>
+                                </body>
+                                <geom rgba="0.95 0.35 0.10 0.28" name="R_ring_proximal_finger_collision" type="capsule" fromto="0 0 0 0.036 0 0" size="0.009" class="s2_finger_proxy"/>
+                              </body>
+                              <body name="R_little_mpp_link" pos="0.00035615 -1e-07 0.140981" quat="0.0012893959276 -0.707104600777 -0.00128939140477 -0.707106610412">
+                                <joint name="R_little_mpp_joint" type="hinge" axis="0 0 -1" limited="true" range="0 1.71" damping="0" frictionloss="0" armature="0"/>
+                                <inertial pos="0.0147588 0 0" mass="0.0143021" fullinertia="9.0033789827476e-07 3.3996621017253e-06 3.3999999999999e-06 0 -4.9995776399188e-13 0"/>
+                                <body name="R_little_ip_link" pos="0.0388 0 0">
+                                  <joint name="R_little_ip_joint" type="hinge" axis="0 0 -1" limited="true" range="0 1.76" damping="0" frictionloss="0" armature="0"/>
+                                  <inertial pos="0.0130333 0 0" mass="0.0117927" fullinertia="3.3511152055167e-07 1.7648884794483e-06 1.8e-06 0 0 0"/>
+                                  <geom rgba="0.95 0.35 0.10 0.28" name="R_little_distal_finger_collision" type="capsule" fromto="0 0 0 0.032 0 0" size="0.008" class="s2_finger_proxy"/>
+                                </body>
+                                <geom rgba="0.95 0.35 0.10 0.28" name="R_little_proximal_finger_collision" type="capsule" fromto="0 0 0 0.036 0 0" size="0.009" class="s2_finger_proxy"/>
+                              </body>
+                            </body>
+                            <geom rgba="0.70 0.55 0.15 0.32" name="R_hand_collision" type="box" pos="0 0 0.06" size="0.043 0.035 0.062" class="s2_body_collision"/>
+                          </body>
+                        </body>
+                        <geom rgba="0.18 0.70 0.25 0.30" name="R_wrist_roll_collision" type="capsule" fromto="0 0 -0.005 0 0 -0.075" size="0.034" class="s2_body_collision"/>
+                      </body>
+                      <geom rgba="0.18 0.70 0.25 0.30" name="R_wrist_pitch_collision" type="capsule" fromto="0 0 -0.005 0 0 -0.065" size="0.035" class="s2_body_collision"/>
+                    </body>
+                    <geom rgba="0.18 0.70 0.25 0.30" name="R_forearm_collision" type="capsule" fromto="0 0 -0.012 0 0 -0.095" size="0.043" class="s2_body_collision"/>
+                  </body>
+                  <geom rgba="0.18 0.70 0.25 0.30" name="R_elbow_collision" type="sphere" pos="0 0 -0.025" size="0.055" class="s2_body_collision"/>
+                </body>
+                <geom rgba="0.18 0.70 0.25 0.30" name="R_upper_arm_collision" type="capsule" fromto="0 0 -0.02 0 0 -0.195" size="0.052" class="s2_body_collision"/>
+              </body>
+              <geom rgba="0.18 0.70 0.25 0.30" name="R_shoulder_roll_collision" type="capsule" fromto="0 0 -0.005 0 0 -0.075" size="0.055" class="s2_body_collision"/>
+            </body>
+            <geom rgba="0.18 0.70 0.25 0.30" name="R_shoulder_pitch_collision" type="sphere" pos="0 0 0" size="0.075" class="s2_body_collision"/>
+          </body>
+          <geom rgba="0.18 0.70 0.25 0.30" name="torso_collision" type="ellipsoid" pos="-0.005 0 0.205" size="0.145 0.165 0.215" class="s2_body_collision"/>
+          <geom rgba="0.18 0.70 0.25 0.30" name="backpack_collision" type="box" pos="-0.135 0 0.225" size="0.055 0.125 0.165" class="s2_body_collision"/>
+        </body>
+        <geom rgba="0.18 0.70 0.25 0.30" name="waist_yaw_collision" type="capsule" fromto="0 0 -0.035 0 0 0.055" size="0.090" class="s2_body_collision"/>
+      </body>
+      <geom rgba="0.18 0.70 0.25 0.30" name="base_link_collision" type="ellipsoid" pos="-0.025 0 0.035" size="0.145 0.165 0.105" class="s2_body_collision"/>
+    </body>
+  </worldbody>
+  <equality>
+    <!-- Four-generation hand distal joints are passive/coupled. Ratio uses the documented 100.94 deg distal motion over 98 deg proximal motion. -->
+    <joint name="L_index_distal_coupling" joint1="L_index_ip_joint" joint2="L_index_mpp_joint" polycoef="0 1.0292397661 0 0 0" solref="0.01 1"/>
+    <joint name="L_middle_distal_coupling" joint1="L_middle_ip_joint" joint2="L_middle_mpp_joint" polycoef="0 1.0292397661 0 0 0" solref="0.01 1"/>
+    <joint name="L_ring_distal_coupling" joint1="L_ring_ip_joint" joint2="L_ring_mpp_joint" polycoef="0 1.0292397661 0 0 0" solref="0.01 1"/>
+    <joint name="L_little_distal_coupling" joint1="L_little_ip_joint" joint2="L_little_mpp_joint" polycoef="0 1.0292397661 0 0 0" solref="0.01 1"/>
+    <joint name="R_index_distal_coupling" joint1="R_index_ip_joint" joint2="R_index_mpp_joint" polycoef="0 1.0292397661 0 0 0" solref="0.01 1"/>
+    <joint name="R_middle_distal_coupling" joint1="R_middle_ip_joint" joint2="R_middle_mpp_joint" polycoef="0 1.0292397661 0 0 0" solref="0.01 1"/>
+    <joint name="R_ring_distal_coupling" joint1="R_ring_ip_joint" joint2="R_ring_mpp_joint" polycoef="0 1.0292397661 0 0 0" solref="0.01 1"/>
+    <joint name="R_little_distal_coupling" joint1="R_little_ip_joint" joint2="R_little_mpp_joint" polycoef="0 1.0292397661 0 0 0" solref="0.01 1"/>
+  </equality>
+  <actuator>
+    <!-- Active position servos. kv is computed for critical damping at the home keyframe from the model effective joint inertia. forcerange uses documented continuous/rated torque. -->
+    <!-- user[0:5] = rated torque per physical motor [Nm], peak torque per physical motor [Nm], documented maximum speed [rad/s], physical motor count, documented rated speed [rad/s]. -->
+    <!-- Virtual ankle pitch/roll torque limits remain an approximation; the true inside/outside motor transmission and coupled torque polytope are not available in the supplied documents. -->
+    <position name="L_hip_roll_joint_servo" joint="L_hip_roll_joint" kp="110" forcelimited="true" forcerange="-75 75" ctrllimited="true" inheritrange="0.95" user="75 225 8.37758040957 1 5.23598775598" kv="17.165380585"/>
+    <position name="L_hip_yaw_joint_servo" joint="L_hip_yaw_joint" kp="30" forcelimited="true" forcerange="-22 22" ctrllimited="true" inheritrange="0.95" user="22 65 8.37758040957 1 5.23598775598" kv="1.081896667"/>
+    <position name="L_hip_pitch_joint_servo" joint="L_hip_pitch_joint" kp="100" forcelimited="true" forcerange="-75 75" ctrllimited="true" inheritrange="0.95" user="75 225 8.37758040957 1 5.23598775598" kv="4.8306828565"/>
+    <position name="L_knee_pitch_joint_servo" joint="L_knee_pitch_joint" kp="125" forcelimited="true" forcerange="-75 75" ctrllimited="true" inheritrange="0.95" user="75 225 8.37758040957 1 5.23598775598" kv="3.880022332"/>
+    <position name="L_ankle_pitch_joint_servo" joint="L_ankle_pitch_joint" kp="30" forcelimited="true" forcerange="-44 44" ctrllimited="true" inheritrange="0.95" user="22 65 8.37758040957 2 5.23598775598" kv="0.81297141475"/>
+    <position name="L_ankle_roll_joint_servo" joint="L_ankle_roll_joint" kp="30" forcelimited="true" forcerange="-44 44" ctrllimited="true" inheritrange="0.95" user="22 65 8.37758040957 2 5.23598775598" kv="0.4417916051"/>
+    <position name="R_hip_roll_joint_servo" joint="R_hip_roll_joint" kp="110" forcelimited="true" forcerange="-75 75" ctrllimited="true" inheritrange="0.95" user="75 225 8.37758040957 1 5.23598775598" kv="17.165380585"/>
+    <position name="R_hip_yaw_joint_servo" joint="R_hip_yaw_joint" kp="30" forcelimited="true" forcerange="-22 22" ctrllimited="true" inheritrange="0.95" user="22 65 8.37758040957 1 5.23598775598" kv="1.081896667"/>
+    <position name="R_hip_pitch_joint_servo" joint="R_hip_pitch_joint" kp="100" forcelimited="true" forcerange="-75 75" ctrllimited="true" inheritrange="0.95" user="75 225 8.37758040957 1 5.23598775598" kv="4.8306828565"/>
+    <position name="R_knee_pitch_joint_servo" joint="R_knee_pitch_joint" kp="125" forcelimited="true" forcerange="-75 75" ctrllimited="true" inheritrange="0.95" user="75 225 8.37758040957 1 5.23598775598" kv="3.880022332"/>
+    <position name="R_ankle_pitch_joint_servo" joint="R_ankle_pitch_joint" kp="30" forcelimited="true" forcerange="-44 44" ctrllimited="true" inheritrange="0.95" user="22 65 8.37758040957 2 5.23598775598" kv="0.81297141475"/>
+    <position name="R_ankle_roll_joint_servo" joint="R_ankle_roll_joint" kp="30" forcelimited="true" forcerange="-44 44" ctrllimited="true" inheritrange="0.95" user="22 65 8.37758040957 2 5.23598775598" kv="0.4417916051"/>
+    <position name="waist_yaw_joint_servo" joint="waist_yaw_joint" kp="125" forcelimited="true" forcerange="-35 35" ctrllimited="true" inheritrange="0.95" user="35 85 3.87463093943 1 2.09439510239" kv="6.363866115"/>
+    <position name="waist_pitch_joint_servo" joint="waist_pitch_joint" kp="125" forcelimited="true" forcerange="-79 79" ctrllimited="true" inheritrange="0.95" user="79 265 2.09439510239 1 1.57079632679" kv="5.982083272"/>
+    <position name="head_yaw_joint_servo" joint="head_yaw_joint" kp="100" ctrllimited="true" inheritrange="0.95" forcelimited="true" forcerange="-3 3" user="3 4.5 5.23598775598 1 3.14159265359" kv="1.088854757"/>
+    <position name="head_pitch_joint_servo" joint="head_pitch_joint" kp="100" ctrllimited="true" inheritrange="0.95" forcelimited="true" forcerange="-3 3" user="3 4.5 5.23598775598 1 3.14159265359" kv="1.998828007"/>
+    <position name="L_shoulder_pitch_joint_servo" joint="L_shoulder_pitch_joint" kp="40" forcelimited="true" forcerange="-27 27" ctrllimited="true" inheritrange="0.95" user="27 80 3.14159265359 1 2.09439510239" kv="3.1047903945"/>
+    <position name="L_shoulder_roll_joint_servo" joint="L_shoulder_roll_joint" kp="40" forcelimited="true" forcerange="-27 27" ctrllimited="true" inheritrange="0.95" user="27 80 3.14159265359 1 2.09439510239" kv="6.257933959"/>
+    <position name="L_shoulder_yaw_joint_servo" joint="L_shoulder_yaw_joint" kp="22.5" forcelimited="true" forcerange="-17 17" ctrllimited="true" inheritrange="0.95" user="17 45 3.14159265359 1 2.09439510239" kv="0.46424721405"/>
+    <position name="L_elbow_roll_joint_servo" joint="L_elbow_roll_joint" kp="22.5" forcelimited="true" forcerange="-17 17" ctrllimited="true" inheritrange="0.95" user="17 45 3.14159265359 1 2.09439510239" kv="1.1186882825"/>
+    <position name="L_elbow_yaw_joint_servo" joint="L_elbow_yaw_joint" kp="10" forcelimited="true" forcerange="-17 17" ctrllimited="true" inheritrange="0.95" user="17 20 3.14159265359 1 2.09439510239" kv="0.22872464685"/>
+    <position name="L_wrist_pitch_joint_servo" joint="L_wrist_pitch_joint" kp="10" forcelimited="true" forcerange="-17 17" ctrllimited="true" inheritrange="0.95" user="17 20 3.14159265359 1 2.09439510239" kv="0.67104018355"/>
+    <position name="L_wrist_roll_joint_servo" joint="L_wrist_roll_joint" kp="10" forcelimited="true" forcerange="-17 17" ctrllimited="true" inheritrange="0.95" user="17 20 3.14159265359 1 2.09439510239" kv="0.6637866364"/>
+    <position name="L_thumb_cmp_joint_servo" joint="L_thumb_cmp_joint" kp="0.675" forcelimited="true" forcerange="-0.46 0.46" ctrllimited="true" inheritrange="0.95" group="4" user="0.46 1.38 2.51327412287 1 1.97920337176" kv="0.0276605015"/>
+    <position name="L_thumb_mpp_joint_servo" joint="L_thumb_mpp_joint" kp="0.675" forcelimited="true" forcerange="-0.46 0.46" ctrllimited="true" inheritrange="0.95" group="4" user="0.46 1.38 2.51327412287 1 1.97920337176" kv="0.020714292385"/>
+    <position name="L_thumb_ip_joint_servo" joint="L_thumb_ip_joint" kp="0.675" forcelimited="true" forcerange="-0.46 0.46" ctrllimited="true" inheritrange="0.95" group="4" user="0.46 1.38 2.51327412287 1 1.97920337176" kv="0.003001200889"/>
+    <position name="L_index_mpp_joint_servo" joint="L_index_mpp_joint" kp="0.675" forcelimited="true" forcerange="-0.46 0.46" ctrllimited="true" inheritrange="0.95" group="4" user="0.46 1.38 2.51327412287 1 1.97920337176" kv="0.006256861827"/>
+    <position name="L_middle_mpp_joint_servo" joint="L_middle_mpp_joint" kp="0.675" forcelimited="true" forcerange="-0.46 0.46" ctrllimited="true" inheritrange="0.95" group="4" user="0.46 1.38 2.51327412287 1 1.97920337176" kv="0.006432332179"/>
+    <position name="L_ring_mpp_joint_servo" joint="L_ring_mpp_joint" kp="0.675" forcelimited="true" forcerange="-0.46 0.46" ctrllimited="true" inheritrange="0.95" group="4" user="0.46 1.38 2.51327412287 1 1.97920337176" kv="0.0063565164165"/>
+    <position name="L_little_mpp_joint_servo" joint="L_little_mpp_joint" kp="0.675" forcelimited="true" forcerange="-0.46 0.46" ctrllimited="true" inheritrange="0.95" group="4" user="0.46 1.38 2.51327412287 1 1.97920337176" kv="0.0062102139245"/>
+    <position name="R_shoulder_pitch_joint_servo" joint="R_shoulder_pitch_joint" kp="40" forcelimited="true" forcerange="-27 27" ctrllimited="true" inheritrange="0.95" user="27 80 3.14159265359 1 2.09439510239" kv="3.1047903945"/>
+    <position name="R_shoulder_roll_joint_servo" joint="R_shoulder_roll_joint" kp="40" forcelimited="true" forcerange="-27 27" ctrllimited="true" inheritrange="0.95" user="27 80 3.14159265359 1 2.09439510239" kv="6.257933959"/>
+    <position name="R_shoulder_yaw_joint_servo" joint="R_shoulder_yaw_joint" kp="22.5" forcelimited="true" forcerange="-17 17" ctrllimited="true" inheritrange="0.95" user="17 45 3.14159265359 1 2.09439510239" kv="0.46424721405"/>
+    <position name="R_elbow_roll_joint_servo" joint="R_elbow_roll_joint" kp="22.5" forcelimited="true" forcerange="-17 17" ctrllimited="true" inheritrange="0.95" user="17 45 3.14159265359 1 2.09439510239" kv="1.1186882825"/>
+    <position name="R_elbow_yaw_joint_servo" joint="R_elbow_yaw_joint" kp="10" forcelimited="true" forcerange="-17 17" ctrllimited="true" inheritrange="0.95" user="17 20 3.14159265359 1 2.09439510239" kv="0.22872464685"/>
+    <position name="R_wrist_pitch_joint_servo" joint="R_wrist_pitch_joint" kp="10" forcelimited="true" forcerange="-17 17" ctrllimited="true" inheritrange="0.95" user="17 20 3.14159265359 1 2.09439510239" kv="0.67104018355"/>
+    <position name="R_wrist_roll_joint_servo" joint="R_wrist_roll_joint" kp="10" forcelimited="true" forcerange="-17 17" ctrllimited="true" inheritrange="0.95" user="17 20 3.14159265359 1 2.09439510239" kv="0.6637866364"/>
+    <position name="R_thumb_cmp_joint_servo" joint="R_thumb_cmp_joint" kp="0.675" forcelimited="true" forcerange="-0.46 0.46" ctrllimited="true" inheritrange="0.95" group="4" user="0.46 1.38 2.51327412287 1 1.97920337176" kv="0.0276605015"/>
+    <position name="R_thumb_mpp_joint_servo" joint="R_thumb_mpp_joint" kp="0.675" forcelimited="true" forcerange="-0.46 0.46" ctrllimited="true" inheritrange="0.95" group="4" user="0.46 1.38 2.51327412287 1 1.97920337176" kv="0.020714292385"/>
+    <position name="R_thumb_ip_joint_servo" joint="R_thumb_ip_joint" kp="0.675" forcelimited="true" forcerange="-0.46 0.46" ctrllimited="true" inheritrange="0.95" group="4" user="0.46 1.38 2.51327412287 1 1.97920337176" kv="0.003001200889"/>
+    <position name="R_index_mpp_joint_servo" joint="R_index_mpp_joint" kp="0.675" forcelimited="true" forcerange="-0.46 0.46" ctrllimited="true" inheritrange="0.95" group="4" user="0.46 1.38 2.51327412287 1 1.97920337176" kv="0.006256861827"/>
+    <position name="R_middle_mpp_joint_servo" joint="R_middle_mpp_joint" kp="0.675" forcelimited="true" forcerange="-0.46 0.46" ctrllimited="true" inheritrange="0.95" group="4" user="0.46 1.38 2.51327412287 1 1.97920337176" kv="0.006432332179"/>
+    <position name="R_ring_mpp_joint_servo" joint="R_ring_mpp_joint" kp="0.675" forcelimited="true" forcerange="-0.46 0.46" ctrllimited="true" inheritrange="0.95" group="4" user="0.46 1.38 2.51327412287 1 1.97920337176" kv="0.0063565164165"/>
+    <position name="R_little_mpp_joint_servo" joint="R_little_mpp_joint" kp="0.675" forcelimited="true" forcerange="-0.46 0.46" ctrllimited="true" inheritrange="0.95" group="4" user="0.46 1.38 2.51327412287 1 1.97920337176" kv="0.0062102139245"/>
+  </actuator>
+  <sensor>
+    <!-- imu_lin_vel and root_angmom are simulator/state-estimator quantities; do not expose them to a deployment actor unless the real stack provides equivalents. -->
+    <!-- MJLab locomotion aliases plus correctly placed wrist six-axis force/torque sensing. -->
+    <!--MJLab velocity-task sensor names.-->
+    <velocimeter name="imu_lin_vel" site="body_imu"/>
+    <gyro name="imu_ang_vel" site="body_imu"/>
+    <subtreeangmom name="root_angmom" body="base_link"/>
+    <!-- IMU 传感器信息 加速度、⻆速度、 -->
+    <!-- 位姿四元素 
+  This element creates a sensor that returns the unit quaternion specifying the orientation of the spatial frame of the object, in global coordinates. -->
+    <framequat name="orientation_base" objtype="site" objname="body_imu"/>
+    <!-- ⻆速度  
+  This element creates a 3-axis gyroscope. The sensor is mounted at a site, and has the same position and orientation as the site frame. 
+  This sensor outputs three numbers, which are the angular velocity of the site in local coordinates. 
+  This sensor is often used in conjunction with an accelerometer mounted at the same site, to simulate an inertial measurement unit (IMU).-->
+    <!-- 加速度
+  This element creates a 3-axis accelerometer. 
+  The sensor is mounted at a site, and has the same position and orientation as the site frame. 
+  This sensor outputs three numbers, which are the linear acceleration of the site (including gravity) in local coordinates.
+   -->
+    <accelerometer name="linear_acceleration_base" site="body_imu"/>
+    <framequat name="orientation_head" objtype="site" objname="head_imu"/>
+    <gyro name="angular_velocity_head" site="head_imu"/>
+    <accelerometer name="linear_acceleration_head" site="head_imu"/>
+    <force name="L_wrist_force" site="L_wrist_ft"/>
+    <torque name="L_wrist_torque" site="L_wrist_ft"/>
+    <force name="R_wrist_force" site="R_wrist_ft"/>
+    <torque name="R_wrist_torque" site="R_wrist_ft"/>
+  </sensor>
+  <keyframe>
+    <!--Initialization seed only; dynamic balance must be learned/controlled.-->
+    <key name="home" qpos="0 0 0.8998028869 1 0 0 0 0 0 0.15 -0.3 0.15 0 0 0 0.15 -0.3 0.15 0 0 0 0 0 0 0 0 -0.2 0 0 0 -0.08 0.08 0.08 0.08 0.082339181288 0.08 0.082339181288 0.08 0.082339181288 0.08 0.082339181288 0 0 0 -0.2 0 0 0 0.08 0.08 0.08 0.08 0.082339181288 0.08 0.082339181288 0.08 0.082339181288 0.08 0.082339181288" ctrl="0 0 0.15 -0.3 0.15 0 0 0 0.15 -0.3 0.15 0 0 0 0 0 0 0 0 -0.2 0 0 0 -0.08 0.08 0.08 0.08 0.08 0.08 0.08 0 0 0 -0.2 0 0 0 0.08 0.08 0.08 0.08 0.08 0.08 0.08"/>
+  </keyframe>
+</mujoco>
